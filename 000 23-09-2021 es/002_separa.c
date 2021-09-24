@@ -6,7 +6,7 @@ int int main() {
 
   scanf("%f", &n);
 
-  // In questo assegnamento stiamo facendo il caso di float su int, perdendo la parte decimale
+  // In questo assegnamento stiamo facendo il cast di float su int, perdendo la parte decimale
   intera = n;
   decimale = n - intera;
 
