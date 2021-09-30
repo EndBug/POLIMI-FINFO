@@ -17,8 +17,8 @@ int main() {
   while (n > 0) {
     cifra = n % BASE2;
     n = n / BASE2;
-    ris = ris + cifra*pot10;
-    pot10 = pot10*BASE10;
+    ris = ris + cifra * pot10;
+    pot10 = pot10 * BASE10;
   }
   printf("%d\n", ris);
 
