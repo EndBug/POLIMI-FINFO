@@ -1,6 +1,8 @@
 #include <stdio.h>
 
 /*
+  HW 19-10-2021, LEZ 21-10-2021
+  Da es. 19-10-2021 + consegna extra dell'esercizio successivo
   In matematica, la congettura di Goldbach è uno dei più vecchi
   problemi irrisolti nella teoria dei numeri. Essa afferma che ogni
   numero pari maggiore di 2 può essere scritto come somma di due
@@ -13,13 +15,14 @@
 */
 
 int primo(int);
+int positivo();
 
 int main() {
   int n, i;
 
   do
-    scanf("%d", &n);
-  while (n < 2 || n % 2);
+    n = positivo();
+  while (n % 2 || n == 2);
 
   for (i = 1; i < n/2; i++) {
     if (primo(i) && primo(n-i))
@@ -29,13 +32,27 @@ int main() {
   return 0;
 }
 
-int primo(int n) {
-  int i, flag;
+int positivo() {
+  /* Lo scope di questa n è limitato a questa funzione. */
+  int n;
 
-  for (i = n/2, flag = 1; i > 1 && flag; i--) {
-    if (!(n % i))
-      flag = 0;
+  scanf("%d", &n);
+
+  while (n < 0) {
+    printf("Errore.\n");
+    scanf("%d", &n);
   }
 
-  return flag;
+  return n;
+}
+
+int primo(int n) {
+  int i, p;
+
+  for (i = 2, p = 1; i*i <= n && p; i++) {
+    if (!(n % i))
+      p = 0;
+  }
+
+  return p;
 }
