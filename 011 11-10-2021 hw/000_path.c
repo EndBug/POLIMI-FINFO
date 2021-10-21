@@ -4,7 +4,7 @@
 #define SEP '/'
 
 /*
-  Esercizio svolto da solo  l'11-10-2021, trattato in es il 18-10-2021
+  Esercizio svolto da solo l'11-10-2021, trattato in es il 18-10-2021
   Scrivere un programma in C che chiede all'utente una stringa di
   massimo 50 caratteri che rappresenta il percorso completo di un
   file. Il programma salva in una nuova stringa il solo nome del file
