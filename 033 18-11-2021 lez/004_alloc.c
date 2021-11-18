@@ -22,8 +22,8 @@ int main() {
     /* 
       malloc ic permette di allocare uo spazio nella memoria di una dimensione 
       definita in runtime. 
-      malloc ritorna void* (puntatore a byte), quindi per utilizzarlo dobbiamo 
-      noi assegnare il tipo (nel nostro caso int*).
+      malloc ritorna void* (puntatore a byte), quindi il compilatore fa un cast 
+      implicito (nel nostro caso a int*).
     */
     p = (int*) malloc(dim*sizeof(int)); /* (void*) */
   
