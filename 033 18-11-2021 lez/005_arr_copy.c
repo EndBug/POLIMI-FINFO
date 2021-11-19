@@ -42,7 +42,7 @@ int main() {
 
 int* arrayCopy(int a[], int dim) {
   int i, *p;
-S
+
   p = (int*) malloc(sizeof(int)*dim);
 
   if (p) {
