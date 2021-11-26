@@ -1,22 +1,18 @@
 #include <stdio.h>
 
+/*
+  Scrivere un programma chiede all'utente un numero intero e ne
+  visualizza il suo valore assoluto.
+*/
+
 int main() {
-  int n, a;
+  int n;
 
   scanf("%d", &n);
 
-  /*
-  int n, a;
-  if (n < 0) {
-    a = -n;
-  } else {
-    a = n;
-  }
-  printf("%d\n", a);
-  */
+  if (n < 0)
+    n = -n;
 
-  // Questa versione è più elegante <3
-  if (n < 0) n = -n
   printf("%d\n", n);
 
   return 0;

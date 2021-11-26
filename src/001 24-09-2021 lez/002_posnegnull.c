@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/*
+  Scrivere un programma che acquisito un numero intero visualizza il
+  messaggio "positivo", "negativo" o "nullo" in base al valore.
+*/
+
 int main() {
   int n;
 
@@ -11,7 +16,7 @@ int main() {
     else
       printf("NULLO\n");
   } else {
-      printf("NEGATIVO\n");
+    printf("NEGATIVO\n");
   }
 
   return 0;
