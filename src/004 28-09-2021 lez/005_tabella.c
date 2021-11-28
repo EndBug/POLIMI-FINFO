@@ -3,7 +3,7 @@
 #define MAXC 10
 
 /*
-Scrivere un programma in C che visualizza la tabella pitagorica.
+  Scrivere un programma in C che visualizza la tabella pitagorica.
 */
 
 int main() {
@@ -13,7 +13,7 @@ int main() {
   while (i <= MAXR) {
     j = 1;
     while (j <= MAXC) {
-      n = i*j;
+      n = i * j;
 
       /* Utilizziamo 3d per indicare di spaziarli come se avessero 3 cifre. */
       printf("%3d ", n);

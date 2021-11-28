@@ -14,16 +14,19 @@ int main() {
 
   scanf("%d", &n);
   while (n < 2) {
-    printf("Errore\n");
+    printf("Errore.\n");
     scanf("%d", &n);
   }
 
   i = 2;
   primo = 1;
 
-  /* Sarebbe i<=sqrt(n), ma dato che noi non usiamo le librerie facciamo il discorso contrario*/
-  while (i*i <= n && primo) {
-    if (!(n % i)) 
+  /*
+    Sarebbe i<=sqrt(n), ma dato che noi non usiamo le librerie facciamo il
+    discorso contrario
+  */
+  while (i * i <= n && primo) {
+    if (!(n % i))
       primo = 0;
 
     /* Si può anche scrivere primo = (n%i)!=0 */
@@ -32,7 +35,10 @@ int main() {
     i++;
   }
 
-  printf("%d\n", primo);
+  if (primo)
+    printf("Primo.\n");
+  else
+    printf("Non primo.\n");
 
   return 0;
 }

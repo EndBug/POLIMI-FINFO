@@ -3,7 +3,12 @@
 #define BASE10 10
 
 /*
-  Modifica di 003_stampacifre per gestire la base 2 ?
+  Scrivere un programma che chiede all'utente un numero intero
+  positivo. Il programma converte il numero in binario naturale
+  mediante il metodo dei resti mostrando il risultato dall'ultima
+  cifra alla prima.
+  VARIANTE: stampare il numero binario correttamente da sinistra verso
+  destra.
 */
 
 int main() {

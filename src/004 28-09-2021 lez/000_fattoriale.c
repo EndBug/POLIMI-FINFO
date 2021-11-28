@@ -23,8 +23,8 @@ int main() {
   f = 1;
   i = 2;
   while (i <= n) {
-    f = f*i;
-    i = i+1;
+    f = f * i;
+    i = i + 1;
   }
 
   printf("%d\n", f);

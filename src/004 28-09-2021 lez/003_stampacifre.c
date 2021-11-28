@@ -11,14 +11,15 @@
 */
 
 int main() {
-  int n, cifra;
+  int n, cifra, b;
 
   scanf("%d", &n);
 
-  while (n > 0) {
-    cifra = n % BASE;
-    n = n / BASE;
-    printf("%d", cifra);
+  for (cifra = 9; cifra >= 0; cifra--) {
+    for (b = n; b; b /= BASE) {
+      if (b % BASE == cifra)
+        printf("%d", cifra);
+    }
   }
   printf("\n");
 
