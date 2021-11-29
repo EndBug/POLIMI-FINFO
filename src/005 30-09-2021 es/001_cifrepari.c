@@ -18,7 +18,6 @@ int main() {
     scanf("%d", &n);
   }
 
-
   tuttePari = 1;
   while (n > 1 && tuttePari) {
     cifra = n % BASE;

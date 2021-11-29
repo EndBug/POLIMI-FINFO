@@ -15,19 +15,20 @@ int main() {
   if (a != 0) {
     ok = 1;
 
-    while (a != 0 && ok) {
-      scanf("%d", &b);
+    scanf("%d", &b);
+    while (b != 0 && ok) {
 
       if (b < a)
         ok = 0;
 
       a = b;
+      scanf("%d", &b);
     }
 
     if (ok)
       printf("Monotona crescente.\n");
     else
-      printf("Non Monotona crescente.\n");
+      printf("Non monotona crescente.\n");
   } else
     printf("Sequenza vuota.\n");
 

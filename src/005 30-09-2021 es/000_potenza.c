@@ -33,7 +33,7 @@ int main() {
   }
 
   if (m < 0)
-    res = 1/res;
+    res = 1 / res;
 
   printf("%f\n", res);
 

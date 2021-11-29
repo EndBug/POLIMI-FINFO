@@ -22,8 +22,8 @@ int main() {
   scanf("%d", &a);
   while (a != 0) {
     scanf("%d", &b);
-    
-    if (b == 2*a)
+
+    if (b == 2 * a)
       printf("%d %d\n", a, b);
 
     a = b;
