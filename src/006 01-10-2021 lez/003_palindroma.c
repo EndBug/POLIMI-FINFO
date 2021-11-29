@@ -15,7 +15,7 @@ int main() {
     scanf("%d", &arr[i]);
 
   for (i = 0, pal = 1; i < DIM / 2 && pal; i++) {
-    if (arr[i] != arr[DIM-1-i])
+    if (arr[i] != arr[DIM - 1 - i])
       pal = 0;
   }
 

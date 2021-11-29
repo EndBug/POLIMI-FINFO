@@ -12,20 +12,20 @@ int main() {
 
   for (i = 0; i < DIM; i++)
     scanf("%d", &a[i]);
-  
+
   /*
     Dobbiamo scambiare gli elementi da 0 a DIM/2
     Ciascun elemento viene scambiato con il suo opposto, i <-> DIM-1-i
     Questo ci permette di utilizzare una sola variabile indice
 
-    Utilizziamo una variabile swap (tmp), in modo da non dover fare operazioni strane e
-    rischiare di fare overflow
+    Utilizziamo una variabile swap (tmp), in modo da non dover fare operazioni
+    strane e rischiare di fare overflow
   */
-  for (i = 0; i < DIM/2; i++) {
+  for (i = 0; i < DIM / 2; i++) {
     tmp = a[i];
-    a[i] = a[DIM-1-i];
-    a[DIM-1-i] = tmp;
-   }
+    a[i] = a[DIM - 1 - i];
+    a[DIM - 1 - i] = tmp;
+  }
 
   for (i = 0; i < DIM; i++)
     printf("%d\n", a[i]);

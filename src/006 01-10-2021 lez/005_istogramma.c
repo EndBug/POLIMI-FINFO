@@ -34,7 +34,7 @@ int main() {
     ist[num]++;
     scanf("%d", &num);
   }
-  
+
   for (i = 0; i < DIM; i++) {
     printf("%d", i);
     for (j = 0; j < ist[i]; j++)
