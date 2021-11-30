@@ -20,8 +20,8 @@ int main() {
   for (i = 0; i < DIM; i++)
     scanf("%d", &arr[i]);
 
-  s1 = sommaArr(arr, DIM/2);
-  s2 = sommaArr(arr+DIM/2, DIM/2);
+  s1 = sommaArr(arr, DIM / 2);
+  s2 = sommaArr(arr + DIM / 2, DIM / 2);
 
   if (s1 > s2)
     printf("Maggiore\n");

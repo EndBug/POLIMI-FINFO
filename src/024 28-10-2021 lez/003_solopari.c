@@ -12,7 +12,7 @@
   contenuto finale dell'array.
 */
 
-void soloPari(int[], int, int*, int*);
+void soloPari(int[], int, int *, int *);
 
 int main() {
   int a1[DIM], a2[DIM], d2, i;

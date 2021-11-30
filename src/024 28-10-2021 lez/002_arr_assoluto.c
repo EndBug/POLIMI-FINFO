@@ -10,7 +10,7 @@
   finale dell'array.
 */
 
-void absArr(int*, int);
+void absArr(int *, int);
 
 int main() {
   int arr[DIM], i;
@@ -31,16 +31,16 @@ void absArr(int *arr, int dim) {
   int i;
 
   for (i = 0; i < dim; i++) {
-    if (*(arr+i) < 0)
-      *(arr+i) *= -1;
+    if (*(arr + i) < 0)
+      *(arr + i) *= -1;
   }
 }
 
 /*
   Questa soluzione è equivalente, semplicemente si usa una notazione differente.
-  Teoricamente potremmo anche dichiarare *arr e poi accedere con arr[i], però non
-  è bello dal punto di vista stilistico => scegliamo una notazione e usiamo quella
-  in tutto il corpo della funzione.
+  Teoricamente potremmo anche dichiarare *arr e poi accedere con arr[i], però
+  non è bello dal punto di vista stilistico => scegliamo una notazione e usiamo
+  quella in tutto il corpo della funzione.
 */
 void absArrVAR(int arr[], int dim) {
   int i;
