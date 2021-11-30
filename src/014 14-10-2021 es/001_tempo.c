@@ -40,14 +40,8 @@ int main() {
 
   for (i = 0, errore = 0; i < n && !errore; i++) {
     scanf("%d %d %d", &tmp.h, &tmp.m, &tmp.s);
-    if (
-      tmp.h >= 0 
-      && tmp.h < HH 
-      && tmp.m >= 0 
-      && tmp.m < MM 
-      && tmp.s >= 0 
-      && tmp.s < SS
-    ) {
+    if (tmp.h >= 0 && tmp.h < HH && tmp.m >= 0 && tmp.m < MM && tmp.s >= 0 &&
+        tmp.s < SS) {
       arr[i] = tmp;
     } else {
       errore = 1;
@@ -58,14 +52,10 @@ int main() {
     for (i = 0, accSec = 0; i < n; i++)
       accSec += (arr[i].h * MM + arr[i].m) * SS + arr[i].s;
 
-    printf(
-      "%d giorno/i, %d ora/e, %d minuto/i, %d secondo/i\n",
-      accSec / (HH*MM*SS),
-      (accSec % (HH*MM*SS)) / (MM*SS),
-      (accSec % (MM*SS)) / SS,
-      accSec % SS
-    );
-  } else 
+    printf("%d giorno/i, %d ora/e, %d minuto/i, %d secondo/i\n",
+           accSec / (HH * MM * SS), (accSec % (HH * MM * SS)) / (MM * SS),
+           (accSec % (MM * SS)) / SS, accSec % SS);
+  } else
     printf("Errore.");
 
   return 0;

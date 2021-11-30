@@ -19,16 +19,17 @@
 */
 
 int main() {
-  char str[MAXS+1];
+  char str[MAXS + 1];
   int res, i, len, potBase;
 
   scanf("%s", str);
 
   len = strlen(str);
 
-  for (i = 0, potBase = 1, res = 0; i < len && res != ERRORE; i++, potBase *= BASE) {
-    if (str[i] >= '0' && str[i] <= BASE+'0')
-      res += potBase * (str[len-1-i]-'0'); 
+  for (i = 0, potBase = 1, res = 0; i < len && res != ERRORE;
+       i++, potBase *= BASE) {
+    if (str[i] >= '0' && str[i] < BASE + '0')
+      res += potBase * (str[len - 1 - i] - '0');
     else
       res = ERRORE;
   }

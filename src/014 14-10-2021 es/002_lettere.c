@@ -18,7 +18,7 @@
 
 int main() {
   int count, i, len;
-  char first, str[MAXS+1];
+  char first, str[MAXS + 1];
 
   scanf("%s", str);
   len = strlen(str);
