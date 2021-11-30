@@ -17,7 +17,7 @@
 */
 
 int potenza(int, int);
-int logN(int, int, int*);
+int logN(int, int, int *);
 
 int main() {
   int n, base, log;

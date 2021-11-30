@@ -11,16 +11,16 @@
   risultato.
 */
 
-int radice(int, int*);
+int radice(int, int *);
 
 int main() {
-  int n, rad;
+  int n, rad, prec;
 
   scanf("%d", &n);
 
-  radice(n, &rad);
+  prec = radice(n, &rad);
 
-  printf("%d\n", rad);
+  printf("%d (prec: %d)\n", rad, prec);
 
   return 0;
 }
@@ -28,11 +28,11 @@ int main() {
 int radice(int arg, int *res) {
   *res = 0;
 
-  while ((*res)*(*res) < arg) {
+  while ((*res) * (*res) < arg) {
     (*res)++;
   }
 
-  if ((*res)*(*res) == arg) 
+  if ((*res) * (*res) == arg)
     return 1;
   else {
     (*res)--;

@@ -31,7 +31,7 @@ typedef struct {
 } intervallo_t;
 
 intervallo_t getInterval();
-intervallo_t checkIntersection(intervallo_t, intervallo_t, int*);
+intervallo_t checkIntersection(intervallo_t, intervallo_t, int *);
 int checkLength(intervallo_t);
 void print(intervallo_t);
 
@@ -71,10 +71,12 @@ intervallo_t getInterval() {
   return res;
 }
 
-intervallo_t checkIntersection(intervallo_t a, intervallo_t b, int *sovrapposti) {
+intervallo_t checkIntersection(intervallo_t a, intervallo_t b,
+                               int *sovrapposti) {
   intervallo_t res;
 
-  if ((a.start > b.start && a.start < b.end) || b.start > a.start && b.start < a.end) {
+  if ((a.start > b.start && a.start < b.end) ||
+      b.start > a.start && b.start < a.end) {
     *sovrapposti = 1;
 
     if (a.start > b.start)
@@ -86,7 +88,7 @@ intervallo_t checkIntersection(intervallo_t a, intervallo_t b, int *sovrapposti)
       res.end = a.end;
     else
       res.end = b.end;
-    
+
   } else {
     *sovrapposti = 0;
     res.start = 0;
@@ -96,10 +98,6 @@ intervallo_t checkIntersection(intervallo_t a, intervallo_t b, int *sovrapposti)
   return res;
 }
 
-int checkLength(intervallo_t a) {
-  return a.end - a.start;
-}
+int checkLength(intervallo_t a) { return a.end - a.start; }
 
-void print(intervallo_t a) {
-  printf("%d -> %d\n", a.start, a.end);
-}
+void print(intervallo_t a) { printf("%d -> %d\n", a.start, a.end); }
