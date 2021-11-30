@@ -8,7 +8,7 @@
   sopra definito.
 */
 
-void swap(int*, int*);
+void swap(int *, int *);
 
 int main() {
   int x, y;

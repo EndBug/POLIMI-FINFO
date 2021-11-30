@@ -9,7 +9,7 @@
   ed il massimo.
 */
 
-void minmax(int, int, int*, int*);
+void minmax(int, int, int *, int *);
 
 int main() {
   int a, b, min, max;

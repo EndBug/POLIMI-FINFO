@@ -1,5 +1,6 @@
 #include <stdio.h>
 #define DIM 10
+#define VARIANTE 1
 
 /*
   Scrivere un programma che chiede all'utente tre numeri interi e,
@@ -10,6 +11,13 @@
 */
 
 int main() {
+  if (VARIANTE)
+    return main_var();
+  else
+    return main_0();
+}
+
+int main_var() {
   int a[DIM], i, *max;
 
   for (i = 0; i < DIM; i++)
@@ -30,7 +38,10 @@ int main_0() {
 
   scanf("%d %d %d", &a, &b, &c);
 
-  /* Dato che qua gli assegno sicuramente un valore, non è necessario inizializzare max a NULL. */
+  /*
+    Dato che qua gli assegno sicuramente un valore, non è necessario
+    inizializzare max a NULL.
+  */
   if (a > b)
     max = &a;
   else
