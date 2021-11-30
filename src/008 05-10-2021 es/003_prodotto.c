@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define DIM 2
+#define DIM 4
 
 /*
   Scrivere un programma in C che chiede i dati di due matrici quadrate
@@ -19,7 +19,7 @@ int main() {
       scanf("%d", &b[i][j]);
   }
 
-  for (i = 0; i < DIM; i++){
+  for (i = 0; i < DIM; i++) {
     for (j = 0; j < DIM; j++) {
       for (k = 0, r[i][j] = 0; k < DIM; k++)
         r[i][j] += a[i][k] * b[k][j];

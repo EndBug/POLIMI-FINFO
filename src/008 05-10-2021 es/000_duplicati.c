@@ -18,7 +18,6 @@ int main() {
     for (j = 0; j < i && nodup; j++)
       if (a[i] == a[j])
         nodup = 0;
-  
 
   printf("OK: %d\n", nodup);
 

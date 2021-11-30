@@ -11,30 +11,30 @@
 */
 
 int main() {
-  int a[MAX+1], b[MAX+1], r[MAX*2+1], gradoA, gradoB, i, j;
+  int a[MAX + 1], b[MAX + 1], r[MAX * 2 + 1], gradoA, gradoB, i, j;
 
-  do 
+  do
     scanf("%d", &gradoA);
   while (gradoA < 0 || gradoA > MAX);
   for (i = 0; i <= gradoA; i++)
     scanf("%d", &a[i]);
 
-  do 
+  do
     scanf("%d", &gradoB);
-  while (gradoB < 0 || gradoB > MAX);  
+  while (gradoB < 0 || gradoB > MAX);
   for (i = 0; i <= gradoB; i++)
     scanf("%d", &b[i]);
 
-  for (i = 0; i <= gradoA+gradoB; i++)
+  for (i = 0; i <= gradoA + gradoB; i++)
     r[i] = 0;
 
   for (i = 0; i <= gradoA; i++) {
     for (j = 0; j <= gradoB; j++) {
-      r[i+j] += a[i]*b[j];
+      r[i + j] += a[i] * b[j];
     }
   }
 
-  for (i = 0; i <= gradoA+gradoB; i++)
+  for (i = 0; i <= gradoA + gradoB; i++)
     printf("%d ", r[i]);
   printf("\n");
 
