@@ -43,7 +43,7 @@
 
 typedef struct {
   int piano, temperatura;
-  char ora[MAX_H+1];
+  char ora[MAX_H + 1];
 } rilevazione_t;
 
 int main() {
@@ -57,7 +57,8 @@ int main() {
 
   printf("\nRilevazioni:\n");
   for (i = 0; i < n; i++)
-    scanf("%d %s %d", &rilevazioni[i].piano, rilevazioni[i].ora, &rilevazioni[i].temperatura);
+    scanf("%d %s %d", &rilevazioni[i].piano, rilevazioni[i].ora,
+          &rilevazioni[i].temperatura);
 
   printf("\nPiano da analizzare: ");
   scanf("%d", &target);

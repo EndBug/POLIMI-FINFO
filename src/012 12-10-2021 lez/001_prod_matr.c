@@ -49,7 +49,7 @@ int main() {
     for (i = 0; i < p.righe; i++)
       for (j = 0; j < p.colonne; j++)
         for (k = 0, p.dati[i][j] = 0; k < a.colonne; k++)
-          p.dati[i][j] += a.dati[i][k]*b.dati[k][j];
+          p.dati[i][j] += a.dati[i][k] * b.dati[k][j];
 
     for (i = 0; i < p.righe; i++) {
       for (j = 0; j < p.colonne; j++)

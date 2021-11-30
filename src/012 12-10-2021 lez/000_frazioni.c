@@ -16,7 +16,7 @@ typedef struct {
 /*
   Si può anche dichiarare:
   struct nome {...};
-  
+
   Ma poi le variabili vanno dichiarate come:
   struct nome a, b;
 
@@ -41,12 +41,12 @@ int main() {
   while (b.d == 0);
 
   somma.d = a.d * b.d;
-  somma.n = a.n*b.d + b.n*a.d;
+  somma.n = a.n * b.d + b.n * a.d;
 
   if (somma.n < 0) {
     somma.n *= -1;
     meno = 1;
-  } else 
+  } else
     meno = 0;
   if (somma.d < 0) {
     somma.d *= -1;
@@ -58,7 +58,7 @@ int main() {
   else
     mcd = somma.d;
 
-  while (somma.n%mcd || somma.d%mcd)
+  while (somma.n % mcd || somma.d % mcd)
     mcd--;
 
   somma.n /= mcd;

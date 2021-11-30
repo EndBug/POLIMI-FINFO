@@ -19,13 +19,13 @@ int main() {
     for (j = 0; j < DIM2; j++)
       scanf("%d", &b[i][j]);
 
-  for (i = 0, count = 0; i <= DIM1-DIM2; i++) {
-    for (j = 0; j <= DIM1-DIM2; j++) {
+  for (i = 0, count = 0; i <= DIM1 - DIM2; i++) {
+    for (j = 0; j <= DIM1 - DIM2; j++) {
       contenuta = 1;
 
       for (ii = 0; ii < DIM2 && contenuta; ii++) {
         for (jj = 0; jj < DIM2 && contenuta; jj++) {
-          if (a[i+ii][j+jj] != b[ii][jj])
+          if (a[i + ii][j + jj] != b[ii][jj])
             contenuta = 0;
         }
       }
