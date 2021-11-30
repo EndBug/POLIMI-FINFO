@@ -12,8 +12,7 @@ void scan(int mat[][NCOL], int nRows, int nCols, int val, int *iRes,
           int *jRes) {
   int i, j, acc;
 
-  *iRes = -1;
-  *jRes = -1;
+  *iRes = *jRes = -1;
 
   for (i = 0, acc = 0; i < nRows && *iRes < 0; i++) {
     for (j = 0; j < nCols && *iRes < 0; j++) {
