@@ -59,7 +59,7 @@ int main() {
   scanf("%d", &archivio.len);
 
   for (i = 0; i < archivio.len; i++) {
-    printf("%d) Titolo: ", i+1);
+    printf("%d) Titolo: ", i + 1);
     scanf(" %[^\n]", archivio.cd[i].titolo);
 
     printf("   Autore: ");
@@ -72,11 +72,8 @@ int main() {
     scanf("%d", &archivio.cd[i].tracce);
 
     printf("   Durata (h m s): ");
-    scanf("%d %d %d", 
-      &archivio.cd[i].durata.h, 
-      &archivio.cd[i].durata.m, 
-      &archivio.cd[i].durata.s
-    );
+    scanf("%d %d %d", &archivio.cd[i].durata.h, &archivio.cd[i].durata.m,
+          &archivio.cd[i].durata.s);
 
     printf("   Prezzo: ");
     scanf("%f", &archivio.cd[i].prezzo);
@@ -85,14 +82,10 @@ int main() {
   max_durata.cd[0] = archivio.cd[0];
   max_durata.len = 1;
   for (i = 1; i < archivio.len; i++) {
-    tmpA = (
-        archivio.cd[i].durata.h*60 
-        + archivio.cd[i].durata.m
-      )*60 + archivio.cd[i].durata.s;
-    tmpB = (
-        max_durata.cd[0].durata.h*60 
-        + max_durata.cd[0].durata.m
-      )*60 + max_durata.cd[0].durata.s;
+    tmpA = (archivio.cd[i].durata.h * 60 + archivio.cd[i].durata.m) * 60 +
+           archivio.cd[i].durata.s;
+    tmpB = (max_durata.cd[0].durata.h * 60 + max_durata.cd[0].durata.m) * 60 +
+           max_durata.cd[0].durata.s;
 
     if (tmpA > tmpB) {
       max_durata.cd[0] = archivio.cd[i];
@@ -103,21 +96,13 @@ int main() {
     }
   }
 
-  printf("\nCD di durata massima (%d:%d:%d)\n", 
-    max_durata.cd[0].durata.h, 
-    max_durata.cd[0].durata.m, 
-    max_durata.cd[0].durata.s
-  );
+  printf("\nCD di durata massima (%d:%d:%d)\n", max_durata.cd[0].durata.h,
+         max_durata.cd[0].durata.m, max_durata.cd[0].durata.s);
   for (i = 0; i < max_durata.len; i++)
-    printf("- %s - %s,  %d, %d tracce, %d:%d:%d\n", 
-      max_durata.cd[i].titolo, 
-      max_durata.cd[i].autore,
-      max_durata.cd[i].anno,
-      max_durata.cd[i].tracce,
-      max_durata.cd[i].durata.h,
-      max_durata.cd[i].durata.m,
-      max_durata.cd[i].durata.s
-    );
+    printf("- %s - %s,  %d, %d tracce, %d:%d:%d\n", max_durata.cd[i].titolo,
+           max_durata.cd[i].autore, max_durata.cd[i].anno,
+           max_durata.cd[i].tracce, max_durata.cd[i].durata.h,
+           max_durata.cd[i].durata.m, max_durata.cd[i].durata.s);
 
   printf("\nAutore da visualizzare: ");
   scanf(" %[^\n]", aut);
@@ -125,7 +110,6 @@ int main() {
     if (!strcmp(archivio.cd[i].autore, aut))
       printf("- %s\n", archivio.cd[i].titolo);
   }
-
 
   for (i = 0; i < archivio.len; i++) {
     /* tmpA <=> ho trovato l'autore*/
