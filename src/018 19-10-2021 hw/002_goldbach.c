@@ -24,9 +24,9 @@ int main() {
     n = positivo();
   while (n % 2 || n == 2);
 
-  for (i = 1; i < n/2; i++) {
-    if (primo(i) && primo(n-i))
-      printf("(%d, %d)\n", i, n-i);
+  for (i = 1; i < n / 2; i++) {
+    if (primo(i) && primo(n - i))
+      printf("(%d, %d)\n", i, n - i);
   }
 
   return 0;
@@ -49,7 +49,7 @@ int positivo() {
 int primo(int n) {
   int i, p;
 
-  for (i = 2, p = 1; i*i <= n && p; i++) {
+  for (i = 2, p = 1; i * i <= n && p; i++) {
     if (!(n % i))
       p = 0;
   }
