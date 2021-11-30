@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define DIM 3
+#define DIM 5
 
 /*
   Scrivere un programma in C che chiede all'utente di inserire i dati
@@ -14,8 +14,8 @@
   [0][0]->[4][0], [0][1]->[3][0], [0][2]->[2][0], ...
   [1][0]->[4][1], [1][1]->[3][1], [1][2]->[2][2], ...
 
-  => La nuova colonna è uguale alla riga, la nuova riga è uguale al complementare della colonna.
-  [i][j]->[DIM-1-j][i]
+  => La nuova colonna è uguale alla riga, la nuova riga è uguale al
+  complementare della colonna. [i][j]->[DIM-1-j][i]
 */
 
 int main() {
@@ -27,7 +27,7 @@ int main() {
 
   for (i = 0; i < DIM; i++)
     for (j = 0; j < DIM; j++)
-      m1[DIM-1-j][i] = m[i][j];
+      m1[DIM - 1 - j][i] = m[i][j];
 
   for (i = 0; i < DIM; i++) {
     for (j = 0; j < DIM; j++)

@@ -16,10 +16,7 @@ int main() {
 
   for (i = 0, id = 1; i < DIM && id; i++) {
     for (j = 0; j < DIM && id; j++) {
-      if (
-          (i == j && m[i][j] != 1) || 
-          (i != j && m[i][j] != 0)
-        )
+      if ((i == j && m[i][j] != 1) || (i != j && m[i][j] != 0))
         id = 0;
     }
   }
