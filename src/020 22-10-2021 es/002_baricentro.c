@@ -32,10 +32,10 @@ int main() {
 
     for (j = 0; j <= i; j++)
       somma += arr[j];
-    for (j = i+1; j < SIZE; j++)
+    for (j = i + 1; j < SIZE; j++)
       somma -= arr[j];
 
-    if (somma == 0) 
+    if (somma == 0)
       found = i;
   }
 

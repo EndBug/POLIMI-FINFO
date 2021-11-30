@@ -13,7 +13,7 @@
 */
 
 int main() {
-  char str[MAXS+1], rip, maxRip;
+  char str[MAXS + 1], rip, maxRip;
   int count, i, len, maxCount;
 
   scanf("%s", str);
@@ -23,7 +23,7 @@ int main() {
   rip = str[0];
   maxCount = 0;
   for (i = 0; i < len; i++) {
-    if (str[i] == str[i+1]) {
+    if (str[i] == str[i + 1]) {
       count++;
       rip = str[i];
       if (count >= maxCount) {
