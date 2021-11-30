@@ -48,19 +48,14 @@ int main() {
           && (i >= DIM-1 || j <= 0 || m[i+1][j-1] <= m[i][j])
           && (i >= DIM-1 || m[i+1][j] <= m[i][j])
           && (i >= DIM-1 || j >= DIM-1 || m[i+1][j+1] <= m[i][j])
-        ) 
+        )
           printf("(%d, %d) = %d\n", i, j, m[i][j]);
       */
 
-      for (ii = -SDIM/2, max = 1; ii <= SDIM/2 && max; ii++) {
-        for (jj = -SDIM/2; jj <= SDIM/2 && max; jj++) {
-          if (
-            i+ii >= 0 
-            && i+ii < DIM 
-            && j+jj >= 0 
-            && j+jj < DIM 
-            && m[i][j] < m[i+ii][j+jj]
-          )
+      for (ii = -SDIM / 2, max = 1; ii <= SDIM / 2 && max; ii++) {
+        for (jj = -SDIM / 2; jj <= SDIM / 2 && max; jj++) {
+          if (i + ii >= 0 && i + ii < DIM && j + jj >= 0 && j + jj < DIM &&
+              m[i][j] < m[i + ii][j + jj])
             max = 0;
         }
       }

@@ -12,8 +12,8 @@
 */
 
 int main() {
-  char s[MAX+1], t[MAX+1];
-  int i, j, res, ls, lt /*, contenuta*/;
+  char s[MAX + 1], t[MAX + 1];
+  int i, j, res, ls, lt;
 
   scanf("%s %s", s, t);
 
@@ -21,8 +21,8 @@ int main() {
   lt = strlen(t);
 
   res = 0;
-  for (i = 0; i <= ls-lt; i++) {
-    /*  
+  for (i = 0; i <= ls - lt; i++) {
+    /*
       Si può fare anche utilizzando uan flag, ma non è necessario.
       for (j = 0, contenuta = 1; j < lt && contenuta; j++)
         if (s[i+j] != t[j])
@@ -32,7 +32,8 @@ int main() {
         res++;
     */
 
-    for (j = 0; j < lt && s[i+j] == t[j]; j++);
+    for (j = 0; j < lt && s[i + j] == t[j]; j++)
+      ;
     if (j == lt)
       res++;
   }

@@ -12,7 +12,7 @@
 */
 
 int main() {
-  char str[MAX+1];
+  char str[MAX + 1];
   int n, l, pal, i, j, pal_count;
 
   scanf("%s", str);
@@ -21,14 +21,14 @@ int main() {
   for (l = 2; l < n; l++) {
     printf("l: %d -> ", l);
 
-    for (i = 0, pal_count = 0; i <= n-l; i++) {
-      for (j = 0, pal = 1; j < l/2 && pal; j++) {
-        if (str[i+j] != str[i+l-j])
+    for (i = 0, pal_count = 0; i <= n - l; i++) {
+      for (j = 0, pal = 1; j < l / 2 && pal; j++) {
+        if (str[i + j] != str[i + l - 1 - j])
           pal = 0;
       }
 
       if (pal) {
-        for (j = i; j <= i+l; j++)
+        for (j = i; j < i + l; j++)
           printf("%c", str[j]);
 
         printf(" ");

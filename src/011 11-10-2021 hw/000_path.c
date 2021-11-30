@@ -14,21 +14,24 @@
 */
 
 int main() {
-  char path[MAX+1], file[MAX+1];
+  char path[MAX + 1], file[MAX + 1];
   int i, len, last;
 
   /* scanf("%s", path); */
-  /* Utilizziamo questo RegEx perché così possiamo avere anche anche spazi etc... */
-  scanf("% [^\n]", path);
+  /* Utilizziamo questo RegEx perché così possiamo avere anche anche spazi
+   * etc... */
+  scanf("%[^\n]", path);
 
   len = strlen(path);
 
-  /* Assumo che la stringa contenga almeno uno /, dato che è una path assoluta */
+  /* Assumo che la stringa contenga almeno uno /, dato che è una path assoluta
+   */
   for (i = 0; i < len; i++)
-    if (path[i] == SEP) last = i;
+    if (path[i] == SEP)
+      last = i;
 
-  for (i = 0; i < len-(last+1); i++)
-    file[i] = path[i+last+1];
+  for (i = 0; i < len - (last + 1); i++)
+    file[i] = path[i + last + 1];
   file[i] = '\0';
 
   printf("%s\n", file);

@@ -32,7 +32,7 @@ int main() {
   for (i = 0; i < DIM; i++)
     printf("%d ", a[i]);
   printf("\n");
-  
+
   for (i = 1; i <= max; i++) {
     for (j = 0; j < DIM; j++) {
       if (a[j] >= i)

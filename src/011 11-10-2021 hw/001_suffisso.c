@@ -11,7 +11,7 @@
 */
 
 int main() {
-  char str[MAX+1], res[MAX+1];
+  char str[MAX + 1], res[MAX + 1];
   int n, len, i;
 
   scanf("%s %d", str, &n);
@@ -21,7 +21,7 @@ int main() {
     n = len;
 
   for (i = 0; i < n; i++)
-    res[i] = str[len-n+i];
+    res[i] = str[len - n + i];
 
   res[i] = '\0';
 
