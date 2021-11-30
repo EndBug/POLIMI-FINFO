@@ -13,7 +13,7 @@
 */
 
 int main() {
-  char s1[MAXS+1], s2[MAXS+1];
+  char s1[MAXS + 1], s2[MAXS + 1];
   int n, len, i;
 
   scanf("%s", s1);
@@ -24,9 +24,9 @@ int main() {
   while (!(n > 0 && n < len));
 
   for (i = 0; i < len; i++)
-    s2[(i+n) % len] = s1[i];
+    s2[(i + n) % len] = s1[i];
   s2[len] = '\0';
-  
+
   printf("%s\n", s2);
 
   return 0;

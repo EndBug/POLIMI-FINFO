@@ -1,5 +1,6 @@
 #include <stdio.h>
 #define BASE 10
+#define VARIANTE 1
 
 /*
   ES3. Scrivere un programma in C che chiede un numero intero positivo
@@ -21,6 +22,13 @@
 */
 
 int main() {
+  if (VARIANTE)
+    return main_VAR();
+  else
+    return main_SIMPLE();
+}
+
+int main_VAR() {
   int n, maxPot, q;
 
   do
@@ -28,17 +36,20 @@ int main() {
   while (n <= 0);
 
   maxPot = 1;
-  while (BASE*maxPot < n)
+  while (BASE * maxPot < n)
     maxPot *= BASE;
 
   while (n > 0) {
     maxPot /= BASE;
 
     if (maxPot) {
-      q = n / (BASE*maxPot);
-      n = n % (BASE*maxPot);
+      q = n / (BASE * maxPot);
+      n = n % (BASE * maxPot);
     } else {
-      /* Isolo il caso in cui maxPot = 0, e quindi devo solo guardare l'ultima cifra. */
+      /*
+        Isolo il caso in cui maxPot = 0, e quindi devo solo guardare l'ultima
+        cifra.
+      */
       q = n;
       n = 0;
     }

@@ -37,7 +37,7 @@
 */
 
 int main() {
-  char str[MAXS+1];
+  char str[MAXS + 1];
   int i, ok, err, count;
 
   scanf("%s", str);

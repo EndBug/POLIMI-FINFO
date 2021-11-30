@@ -24,14 +24,14 @@ int main() {
     scanf("%d", &n);
   while (n <= 0 || n % 2);
 
-  for (i = (n-2)/2; i >= 0; i--) {
+  for (i = (n - 2) / 2; i >= 0; i--) {
     for (j = 0; j < i; j++)
       printf(" ");
-    for (j = 0; j < n-(2*i); j++)
+    for (j = 0; j < n - (2 * i); j++)
       printf("*");
     for (j = 0; j < i; j++)
       printf(" ");
-    printf("\n");    
+    printf("\n");
   }
 
   return 0;
