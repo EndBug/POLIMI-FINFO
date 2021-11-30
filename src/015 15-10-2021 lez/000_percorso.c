@@ -5,7 +5,10 @@
 #define MAXS 30
 #define MAXA 50
 
-/* Associo alle operazioni dei numeri, in modo da potervi far riferimento più comodamente */
+/*
+  Associo alle operazioni dei numeri, in modo da potervi far riferimento più
+  comodamente
+*/
 #define INSERISCI 1
 #define AGGIUNGI 2
 #define CANCELLA 3
@@ -67,11 +70,14 @@
   un messaggio di errore e poi nuovamente il menù.
 */
 
-/* E' un problema complesso, quindi cerchiamo di occuparci di un sottoproblema alla volta */
+/*
+  E' un problema complesso, quindi cerchiamo di occuparci di un sottoproblema
+  alla volta
+*/
 
 typedef struct {
   int x, y;
-  char nome[MAXS+1];
+  char nome[MAXS + 1];
 } localita_t;
 
 /*
@@ -95,22 +101,17 @@ int main() {
   */
   percorso_t l;
   int scelta, i, j, lung_quadrato;
-  float lung;
+  int i_cmax[MAXA][2], n_cmax;
+  float lung, tmp_lung;
 
   l.dim = 0;
 
-
   do {
-    printf(
-      "\nMENU\n- %d: inserisci\n- %d: aggiungi\n- %d: cancella\n- %d: visualizza\n- %d: lunghezza\n- %d: distanza massima\n- %d: uscita\nCosa vuoi fare? ",
-      INSERISCI,
-      AGGIUNGI,
-      CANCELLA,
-      VISUALIZZA,
-      LUNGHEZZA,
-      COPPIAMAX, 
-      USCITA
-    );
+    printf("\nMENU\n- %d: inserisci\n- %d: aggiungi\n- %d: cancella\n- %d: "
+           "visualizza\n- %d: lunghezza\n- %d: distanza massima\n- %d: "
+           "uscita\nCosa vuoi fare? ",
+           INSERISCI, AGGIUNGI, CANCELLA, VISUALIZZA, LUNGHEZZA, COPPIAMAX,
+           USCITA);
     scanf("%d", &scelta);
 
     /* Qui ha usato una catena di if-elseif, ma si poteva fare con lo switch ;*/
@@ -120,9 +121,7 @@ int main() {
         printf("Inserisci i dati: ");
 
         /* La prima posizione disponibile è [l.dim] */
-        scanf("%d %d %s", &l.loc[l.dim].x, 
-                          &l.loc[l.dim].y, 
-                          l.loc[l.dim].nome);
+        scanf("%d %d %s", &l.loc[l.dim].x, &l.loc[l.dim].y, l.loc[l.dim].nome);
         /* Dopo aver aggiunto un elemento incrementiamo l.dim */
         l.dim++;
       } else
@@ -130,7 +129,9 @@ int main() {
     } else if (scelta == AGGIUNGI) {
       /* Anche qua prima controlliamo se c'è spazio.  */
       if (l.dim < MAXA) {
-        /* Ora chiediamo all'utente in che indice vuole inserire il nuovo dato. */
+        /*
+          Ora chiediamo all'utente in che indice vuole inserire il nuovo dato.
+        */
         printf("Inserisci indice: ");
         scanf("%d", &i);
 
@@ -140,14 +141,12 @@ int main() {
         */
         if (i >= 0 && i < l.dim) {
           /* Prima spostiamo tutto in avanti, poi chiediamo i nuovi dati. */
-          for (j = l.dim-1; j >= i; j--)
+          for (j = l.dim - 1; j >= i; j--)
             /* Asseganzione byte a byte */
-            l.loc[j+i] = l.loc[j];
+            l.loc[j + i] = l.loc[j];
 
           printf("Inserisci i dati: ");
-          scanf("%d %d %s", &l.loc[i].x,
-                            &l.loc[i].y,
-                            l.loc[i].nome);
+          scanf("%d %d %s", &l.loc[i].x, &l.loc[i].y, l.loc[i].nome);
 
           /* Finito tutto incrementiamo l.dim. */
           l.dim++;
@@ -161,40 +160,63 @@ int main() {
 
       if (i >= 0 && i < l.dim) {
         /* Si può anceh già utilizzare direttamente la i al posto di j */
-        for (j = i; j < l.dim-1; j++)
-          l.loc[j] = l.loc[j+i];
+        for (j = i; j < l.dim - 1; j++)
+          l.loc[j] = l.loc[j + i];
         l.dim--;
       } else
-        printf("Indice non valido.\n");      
+        printf("Indice non valido.\n");
     } else if (scelta == VISUALIZZA) {
       printf("Percorso:\n");
       for (i = 0; i < l.dim; i++)
         /* Stampiamo anche l'indice che è comodo. */
-        printf("%d: %d %d %s\n", i, l.loc[i].x, 
-                                    l.loc[i].y,
-                                    l.loc[i].nome);
+        printf("%d: %d %d %s\n", i, l.loc[i].x, l.loc[i].y, l.loc[i].nome);
     } else if (scelta == LUNGHEZZA) {
-      for (i = 0, lung = 0; i < l.dim-1; i++) {
-        /* 
+      for (i = 0, lung = 0; i < l.dim - 1; i++) {
+        /*
           Abbiamo comunque incluso math.h, però la usiamo solo per sqrt, non
           utilizziamo pow perché siamo particolarmente masochisti.
         */
-        lung_quadrato = (l.loc[i].x - l.loc[i+1].x)*(l.loc[i].x - l.loc[i+1].x) 
-                        + (l.loc[i].y - l.loc[i+1].y)*(l.loc[i].y - l.loc[i+1].y);
+        lung_quadrato =
+            (l.loc[i].x - l.loc[i + 1].x) * (l.loc[i].x - l.loc[i + 1].x) +
+            (l.loc[i].y - l.loc[i + 1].y) * (l.loc[i].y - l.loc[i + 1].y);
         lung += sqrt(lung_quadrato);
       }
       printf("Lunghezza: %f\n", lung);
     } else if (scelta == COPPIAMAX) {
-      printf("TODO\n");
+      lung = 0;
+      n_cmax = 0;
+
+      for (i = 0; i < l.dim; i++) {
+        for (j = i + 1; j < l.dim; j++) {
+          tmp_lung = (l.loc[i].x - l.loc[j].x) * (l.loc[i].x - l.loc[j].x) +
+                     (l.loc[i].y - l.loc[j].y) * (l.loc[i].y - l.loc[j].y);
+          tmp_lung = sqrt(tmp_lung);
+
+          if (tmp_lung > lung) {
+            lung = tmp_lung;
+            i_cmax[0][0] = i;
+            i_cmax[0][1] = j;
+            n_cmax = 1;
+          } else if (tmp_lung == lung) {
+            i_cmax[n_cmax][0] = i;
+            i_cmax[n_cmax][1] = j;
+            n_cmax++;
+          }
+        }
+      }
+
+      printf("Lunghezza massima: %f\nCoppie:\n", lung);
+      for (i = 0; i < n_cmax; i++)
+        printf("- %s <-> %s\n", l.loc[i_cmax[i][0]].nome,
+               l.loc[i_cmax[i][1]].nome);
     } else if (scelta != USCITA) {
-      /* 
+      /*
         Se scelta == USCITA ci pensa il while a uscire, ma se non è uguale a
         nessuno dei casi validi mostriamo un errore
       */
       printf("Scelta non valida!\n");
     }
   } while (scelta != USCITA);
-
 
   return 0;
 }
