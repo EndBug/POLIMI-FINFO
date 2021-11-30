@@ -8,7 +8,7 @@
 */
 
 int main() {
-  char s1[MAXS+1], s2[MAXS+1], s3[2*MAXS+1];
+  char s1[MAXS + 1], s2[MAXS + 1], s3[2 * MAXS + 1];
   int i, n;
 
   scanf("%s %s", s1, s2);

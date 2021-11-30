@@ -8,12 +8,13 @@
 */
 
 int main() {
-  char s1[MAXS+1], s2[MAXS+1];
+  char s1[MAXS + 1], s2[MAXS + 1];
   int i, uguali;
 
   scanf("%s %s", s1, s2);
 
-  for (i = 0; s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i]; i++);
+  for (i = 0; s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i]; i++)
+    ;
 
   uguali = s1[i] == '\0' && s2[i] == '\0';
 

@@ -8,15 +8,16 @@
 */
 
 int main() {
-  char s1[MAXS+1], s2[MAXS+1];
+  char s1[MAXS + 1], s2[MAXS + 1];
   int i, len;
 
   scanf("%s", s1);
 
-  for (len = 0; s1[len] != '\0'; len++);
+  for (len = 0; s1[len] != '\0'; len++)
+    ;
 
   for (i = 0; i < len; i++)
-    s2[len-i-1] = s1[i];
+    s2[len - i - 1] = s1[i];
 
   /*
     Se non mettiamo \0 printf stamperà finché non trova un terminatore a caso

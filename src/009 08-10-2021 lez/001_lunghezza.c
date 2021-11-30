@@ -1,4 +1,4 @@
-#include <stdio.h> 
+#include <stdio.h>
 #define MAXS 30
 
 /*
@@ -7,10 +7,10 @@
 */
 
 int main() {
-  char str[MAXS+1];
+  char str[MAXS + 1];
   int i;
 
-  /* 
+  /*
     Il programma non sa quanti sono i caratteri da acquisire, quindi se sono
     più della dimensione dell'array va a sporcare la memoria.
     Noi assumeremo che la stringa sia di una lunghezza accettabile.
@@ -21,7 +21,8 @@ int main() {
     Per trovare la lunghezza della stringa scorriamo tutto l'array fino a
     trovare il terminatore. La lunghezza sarà l'indice che terminatore.
   */
-  for (i = 0; str[i]!='\0'; i++);
+  for (i = 0; str[i] != '\0'; i++)
+    ;
 
   printf("%d\n", i);
 

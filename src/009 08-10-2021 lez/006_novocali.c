@@ -9,27 +9,21 @@
 */
 
 int main() {
-  char s1[MAXS+1], s2[MAXS+1];
+  char s1[MAXS + 1], s2[MAXS + 1];
   int i, j;
 
   scanf("%s", s1);
 
   for (i = 0, j = 0; s1[i] != '\0'; i++) {
     /* Sorvoliamo sulle maiuscole, in realtà andrebbero messe. */
-    if (
-      s1[i]!='a'
-      && s1[i]!='e'
-      && s1[i]!='i'
-      && s1[i]!='o'
-      && s1[i]!='u'
-    ) {
+    if (s1[i] != 'a' && s1[i] != 'e' && s1[i] != 'i' && s1[i] != 'o' &&
+        s1[i] != 'u') {
       s2[j] = s1[i];
       j++;
     }
-    s2[j] = '\0';
-
-    printf("%s\n", s2);
   }
+  s2[j] = '\0';
+  printf("%s\n", s2);
 
   return 0;
 }

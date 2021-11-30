@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-/* La libreria string.h contiene una serie di funzioni utility per le stringhe */
+/* La libreria string.h contiene una serie di funzioni utility per le stringhe
+ */
 #include <string.h>
 
 #define MAXS 30
@@ -12,10 +13,10 @@
 */
 
 int main() {
-  char s1[MAXS+1], s2[MAXS+1];
+  char s1[MAXS + 1], s2[MAXS + 1];
   int i, uguali;
 
-  /* 
+  /*
     scanf può anche utilizzare il regex, in questo caso per acquisire una
     stringa fino al primo a capo.
   */
@@ -26,15 +27,17 @@ int main() {
   i = strlen(s1);
 
   /*
-    Bisogna però stare attenti ad utilizzare queste funzioni solo quando servono.
-    Ad esempio, se vogliamo sapere la lunghezza nel for mettiamo una variabile, non la funzione:
+    Bisogna però stare attenti ad utilizzare queste funzioni solo quando
+    servono. Ad esempio, se vogliamo sapere la lunghezza nel for mettiamo una
+    variabile, non la funzione:
 
     len = strlent(s1)
     for (i = 0; i < len; i++);
     Questo ciclo ha una sola dimensione, è un problema lineare.
 
     for (i = 0; i < strlen(s1); i++);
-    Questo problema è diventato quadratico, quando poteva essere semplicemente lineare.
+    Questo problema è diventato quadratico, quando poteva essere semplicemente
+    lineare.
   */
 
   /* strcmp (string compare) permette di confrontare due stringhe */
