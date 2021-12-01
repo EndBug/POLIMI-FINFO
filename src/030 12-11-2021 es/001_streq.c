@@ -10,10 +10,10 @@
   il risultato.
 */
 
-int streq(char*, char*);
+int streq(char *, char *);
 
 int main() {
-  char a[MAXS+1], b[MAXS+1];
+  char a[MAXS + 1], b[MAXS + 1];
   int eq;
 
   scanf("%s %s", a, b);
@@ -27,5 +27,5 @@ int streq(char *a, char *b) {
   if (*a == '\0')
     return *a == *b;
   else
-    return *a == *b && streq(a+1, b+1);
+    return *a == *b && streq(a + 1, b + 1);
 }

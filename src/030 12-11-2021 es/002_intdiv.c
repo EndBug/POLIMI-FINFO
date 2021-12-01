@@ -8,7 +8,7 @@
   funzione sopra definita, visualizzando poi il risultato.
 */
 
-void intDiv(int, int, int*, int*);
+void intDiv(int, int, int *, int *);
 
 int main() {
   int x, y, q, r;
@@ -21,11 +21,11 @@ int main() {
 }
 
 void intDiv(int a, int b, int *q, int *r) {
-  if (a-b < 0) {
+  if (a - b < 0) {
     *q = 0;
     *r = a;
   } else {
-    intDiv(a-b, b, q, r);
+    intDiv(a - b, b, q, r);
     (*q)++;
   }
 }

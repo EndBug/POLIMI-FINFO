@@ -18,11 +18,11 @@
   realizzato.
 */
 
-int strIncludesRec(char*, char*);
-int strIncludesIt(char*, char*);
+int strIncludesRec(char *, char *);
+int strIncludesIt(char *, char *);
 
 int main() {
-  char a[MAXS+1], b[MAXS+1];
+  char a[MAXS + 1], b[MAXS + 1];
   int resRec, resIt;
 
   scanf("%s %s", a, b);
@@ -40,9 +40,9 @@ int strIncludesRec(char *a, char *b) {
     return 0;
 
   if (*a == *b)
-    return strIncludesRec(a+1, b+1);
+    return strIncludesRec(a + 1, b + 1);
   else
-    return strIncludesRec(a, b+1);
+    return strIncludesRec(a, b + 1);
 }
 
 int strIncludesIt(char *a, char *b) {

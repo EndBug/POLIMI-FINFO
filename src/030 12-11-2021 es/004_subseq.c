@@ -14,7 +14,7 @@
   Uscita: valore = 8, lunghezza = 5
 */
 
-void subseq(int[], int, int*, int*);
+void subseq(int[], int, int *, int *);
 
 int main() {
   int dim, arr[MAXDIM], i, val, len;
@@ -44,8 +44,7 @@ void subseq(int arr[], int dim, int *val, int *len) {
         *val = tmpVal;
         *len = tmpLen;
       }
-    }
-    else {
+    } else {
       tmpVal = arr[i];
       tmpLen = 1;
     }

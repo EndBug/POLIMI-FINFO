@@ -9,10 +9,10 @@
   il risultato.
 */
 
-int length(char*);
+int length(char *);
 
 int main() {
-  char str[MAXS+1];
+  char str[MAXS + 1];
   int len;
 
   scanf("%s", str);
@@ -22,9 +22,9 @@ int main() {
   return 0;
 }
 
-int length(char *str){
+int length(char *str) {
   if (*str == '\0')
     return 0;
   else
-    return 1 + length(str+1);
+    return 1 + length(str + 1);
 }
