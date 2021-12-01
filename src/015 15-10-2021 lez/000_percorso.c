@@ -143,7 +143,7 @@ int main() {
           /* Prima spostiamo tutto in avanti, poi chiediamo i nuovi dati. */
           for (j = l.dim - 1; j >= i; j--)
             /* Asseganzione byte a byte */
-            l.loc[j + i] = l.loc[j];
+            l.loc[j + 1] = l.loc[j];
 
           printf("Inserisci i dati: ");
           scanf("%d %d %s", &l.loc[i].x, &l.loc[i].y, l.loc[i].nome);
