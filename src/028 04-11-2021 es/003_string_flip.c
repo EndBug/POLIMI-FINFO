@@ -18,7 +18,7 @@
 void stringFlip(char in[], char out[]);
 
 int main() {
-  char str[MAXS+1], flipped[MAXS+1];
+  char str[MAXS + 1], flipped[MAXS + 1];
 
   scanf("%[^\n]", str);
 
@@ -37,12 +37,12 @@ void stringFlip(char in[], char out[]) {
 
   for (i = 0; i <= len; i++) {
     if (in[i] == ' ' || in[i] == '\0') {
-      for (j = 0; j < i-lastSpace-1; j++) {
-        out[len-i+j] = in[lastSpace+1+j];
+      for (j = 0; j < i - lastSpace - 1; j++) {
+        out[len - i + j] = in[lastSpace + 1 + j];
       }
 
       if (in[i] == ' ') {
-        out[len-i-1] = in[i]; /* ' ' */
+        out[len - i - 1] = in[i]; /* ' ' */
         lastSpace = i;
       }
     }

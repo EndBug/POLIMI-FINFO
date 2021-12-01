@@ -2,7 +2,7 @@
 #define N_OGGETTI 100
 #define MAX_STR 100
 #define PESO_CONTAINER 100
-#define DIM 2
+#define DIM 10
 
 /*
   Si considerino le seguenti strutture dati che rappresentano delle
@@ -40,7 +40,7 @@
 */
 
 typedef struct {
-  char descrizione[MAX_STR+1];
+  char descrizione[MAX_STR + 1];
   float peso_per_unita;
   int quanti;
   int codice;
@@ -49,7 +49,7 @@ typedef struct {
 typedef struct {
   oggetto_t oggetti[N_OGGETTI];
   int n_oggetti;
-  char descrizione[MAX_STR+1];
+  char descrizione[MAX_STR + 1];
   int codice;
 } scatola_t;
 

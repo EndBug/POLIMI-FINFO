@@ -52,7 +52,7 @@ int arrOffset(int a[], int b[], int dim) {
     equal = 1;
 
     for (i = 0; i < dim && equal; i++) {
-      if (a[(offset+i) % dim] != b[i])
+      if (a[(offset + i) % dim] != b[i])
         equal = 0;
     }
 
