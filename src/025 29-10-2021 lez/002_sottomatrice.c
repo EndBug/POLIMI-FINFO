@@ -59,9 +59,9 @@ void acquisisci(int m[][NC], int nr, int nc) {
 void visualizza(int m[][NC], int nr, int nc) {
   int i, j;
 
-  for (i = 0; i < nr; i++){
+  for (i = 0; i < nr; i++) {
     for (j = 0; j < nc; j++)
       printf("%2d ", m[i][j]);
     printf("\n");
-  }  
+  }
 }

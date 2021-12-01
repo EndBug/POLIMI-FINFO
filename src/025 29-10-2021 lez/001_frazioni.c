@@ -21,9 +21,9 @@ typedef struct {
   int n, d;
 } frazione_t;
 
-void visualizza(frazione_t*);
-void acquisisci(frazione_t*);
-void semplifica(frazione_t*);
+void visualizza(frazione_t *);
+void acquisisci(frazione_t *);
+void semplifica(frazione_t *);
 
 int main() {
   frazione_t f;
@@ -36,9 +36,7 @@ int main() {
 }
 
 /* Utilizziamo un nuovo operatore: a->b equivalente a (*a).b */
-void visualizza(frazione_t *f) {
-  printf("%d/%d\n", f->n, f->d);
-}
+void visualizza(frazione_t *f) { printf("%d/%d\n", f->n, f->d); }
 
 void acquisisci(frazione_t *f) {
   scanf("%d %d", &f->n, &f->d);
