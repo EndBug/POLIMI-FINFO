@@ -23,10 +23,10 @@ int main() {
 }
 
 int contaVocali(char *str) {
-  int i, count;
+  int count;
 
-  for (i = 0, count = 0; *(str + i) != '\0'; i++) {
-    switch (str[i]) {
+  for (count = 0; *str != '\0'; str++) {
+    switch (*str) {
     case 'a':
     case 'e':
     case 'i':
@@ -38,10 +38,6 @@ int contaVocali(char *str) {
     case 'O':
     case 'U':
       count++;
-      break;
-
-    default:
-      break;
     }
   }
 
