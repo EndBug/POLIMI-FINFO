@@ -2,14 +2,15 @@
 #define MAX 10
 
 /*
-  ES4 - Scrivere un programma che chiede all'utente la dimensione m di due matrici 
-  quadrate di interi A e B (un valore intero compreso tra 1 e 10 e nel caso non 
-  sia valido va richiesto) e poi i dati per popolare le due matrici.
-  Per ogni valore n compreso tra 2 e m (estremi inclusi), il programma calcola 
-  e stampa le coordinate (i,j) dell'angolo in alto a sinistra di tutte le 
-  sottomatrici quadrate nxn di A e B che soddisfano entrambe le seguenti condizioni:
+  ES4 - Scrivere un programma che chiede all'utente la dimensione m di due
+  matrici quadrate di interi A e B (un valore intero compreso tra 1 e 10 e nel
+  caso non sia valido va richiesto) e poi i dati per popolare le due matrici.
+  Per ogni valore n compreso tra 2 e m (estremi inclusi), il programma calcola
+  e stampa le coordinate (i,j) dell'angolo in alto a sinistra di tutte le
+  sottomatrici quadrate nxn di A e B che soddisfano entrambe le seguenti
+  condizioni:
   - hanno la stessa posizione (i,j) in entrambe le matrici A e B
-  - la sottomatrice definita su A e la sottomatrice definita su B sono uguali 
+  - la sottomatrice definita su A e la sottomatrice definita su B sono uguali
     (contengono gli stessi elementi, posizione per posizione)
 
   Esempio:
@@ -54,13 +55,13 @@ int main() {
     printf("\nN = %d\n", n);
 
     almenoUna = 0;
-    for (i = 0; i <= m-n; i++) {
-      for (j = 0; j <= m-n; j++) {
+    for (i = 0; i <= m - n; i++) {
+      for (j = 0; j <= m - n; j++) {
         valida = 1;
 
         for (ii = 0; ii < n && valida; ii++)
           for (jj = 0; jj < n && valida; jj++)
-            if (A[i+ii][j+jj] != B[i+ii][j+jj])
+            if (A[i + ii][j + jj] != B[i + ii][j + jj])
               valida = 0;
 
         if (valida) {

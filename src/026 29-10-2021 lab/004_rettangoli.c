@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 /*
-  ES5 - Si vuole realizzare un programma che permetta di effettuare alcune 
+  ES5 - Si vuole realizzare un programma che permetta di effettuare alcune
   operazioni geometriche su rettangoli.
-  Dichiarare un tipo di dato per rappresentare un rettangolo. Un rettangolo 
-  è descritto dal vertice inferiore sinistro e da quella del vertice superiore 
+  Dichiarare un tipo di dato per rappresentare un rettangolo. Un rettangolo
+  è descritto dal vertice inferiore sinistro e da quella del vertice superiore
   destro (due punti).
-  Un punto è definito in termini di coordinate x e y (due interi) su uno spazio 
+  Un punto è definito in termini di coordinate x e y (due interi) su uno spazio
   cartesiano bidimensionale.
 
   Scrivere un programma che esegua le seguenti elaborazioni in sequenza:
@@ -39,19 +39,14 @@ int main() {
   do {
     printf("Dati rettangolo B: ");
     scanf("%d %d %d %d", &B.x1, &B.y1, &B.x2, &B.y2);
-  } while (B.x1 >= B.x2 || B.y1 >= B.y2);  
+  } while (B.x1 >= B.x2 || B.y1 >= B.y2);
 
-  areaA = (A.x2-A.x1)*(A.y2-A.y1);
-  areaB = (B.x2-B.x1)*(B.y2-B.y1);
+  areaA = (A.x2 - A.x1) * (A.y2 - A.y1);
+  areaB = (B.x2 - B.x1) * (B.y2 - B.y1);
   printf("\nArea di A: %d\nArea di B: %d\n", areaA, areaB);
 
   /* Controllo il negativo di "non si intersecano" */
-  intersecati = !(
-    A.x2 < B.x1
-    || A.y2 < B.y1
-    || A.x1 > B.x2
-    || A.y1 > B.y2
-  );
+  intersecati = !(A.x2 < B.x1 || A.y2 < B.y1 || A.x1 > B.x2 || A.y1 > B.y2);
   printf("Intersecati: %d\n", intersecati);
 
   if (intersecati) {
@@ -76,9 +71,10 @@ int main() {
     else
       I.y2 = B.y2;
 
-    printf("Rettangolo intersezione: (%d, %d) -> (%d, %d)\n", I.x1, I.y1, I.x2, I.y2);
+    printf("Rettangolo intersezione: (%d, %d) -> (%d, %d)\n", I.x1, I.y1, I.x2,
+           I.y2);
 
-    areaI = (I.x2-I.x1)*(I.y2-I.y1);
+    areaI = (I.x2 - I.x1) * (I.y2 - I.y1);
     areaU = areaA + areaB - areaI;
     iu = (float)areaI / (float)areaU;
     printf("IU: %f\n", iu);

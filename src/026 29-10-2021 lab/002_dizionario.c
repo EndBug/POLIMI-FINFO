@@ -4,13 +4,14 @@
 #define DIM 10
 
 /*
-  ES3 - Definire un tipo di dato parola_t che rappresenta una parola nella lingua 
-  italiana e la sua traduzione inglese (due stringhe ciascuna di al massimo 30 
-  caratteri). Scrivere un programma che chiede all'utente 10 parole italiane e 
-  la loro traduzione in inglese. Il programma esegue le seguenti elaborazioni: 
-  * Il programma cerca e stampa a video quei termini italiani che sono presenti 
+  ES3 - Definire un tipo di dato parola_t che rappresenta una parola nella
+  lingua italiana e la sua traduzione inglese (due stringhe ciascuna di al
+  massimo 30 caratteri). Scrivere un programma che chiede all'utente 10 parole
+  italiane e la loro traduzione in inglese. Il programma esegue le seguenti
+  elaborazioni:
+  * Il programma cerca e stampa a video quei termini italiani che sono presenti
     anche nella lingua inglese (anche se con un altro significato).
-  * Il programma cerca e stampa a video quei termini italiani che hanno più 
+  * Il programma cerca e stampa a video quei termini italiani che hanno più
     traduzioni in inglese.
 
   Come esempio si consideri la seguente lista di parole:
@@ -52,7 +53,7 @@ int main() {
     }
   }
 
-  printf("\nPiù traduzioni:\n");
+  printf("\nPiu' traduzioni:\n");
   for (i = 0; i < DIM; i++) {
     for (j = 0, stampata = 0; j < DIM && !stampata; j++) {
       if (!strcmp(diz[i].it, diz[j].it) && j != i) {

@@ -3,10 +3,10 @@
 
 /*
   ES1 - Scrivere un programma che mostra a video il triangolo di Tartaglia di
-  dimensione chiesta all'utente (massimo 10). Il programma deve eseguire un 
-  controllo di validità sulla dimensione chiesta all'utente e nel caso di 
-  valore non valido richiederla. Esempio: il triangolo di Tartaglia di dimensione
-  5 (valore inserito dall'utente) è:
+  dimensione chiesta all'utente (massimo 10). Il programma deve eseguire un
+  controllo di validità sulla dimensione chiesta all'utente e nel caso di
+  valore non valido richiederla. Esempio: il triangolo di Tartaglia di
+  dimensione 5 (valore inserito dall'utente) è:
   1
   1 1
   1 2 1
@@ -27,7 +27,7 @@ int main() {
       if (j == 0 || j == i)
         t[i][j] = 1;
       else
-        t[i][j] = t[i-1][j-1] + t[i-1][j];
+        t[i][j] = t[i - 1][j - 1] + t[i - 1][j];
     }
   }
 
