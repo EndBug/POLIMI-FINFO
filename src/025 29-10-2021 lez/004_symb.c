@@ -27,7 +27,7 @@ int isUsername(char[], int, int, char[]);
 
 int main() {
   int valido;
-  char str[MAXS+1];
+  char str[MAXS + 1];
 
   scanf("%s", str);
 
@@ -50,5 +50,5 @@ int isUsername(char usr[], int n, int nl, char symb[]) {
         noSymb = 0;
   }
 
-  return i >= n && cl >= nl && noSymb;  
+  return i >= n && cl >= nl && noSymb;
 }
