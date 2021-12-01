@@ -11,7 +11,7 @@
   il sottoprogramma definito e visualizza il risultato.
 */
 
-int includes(int, int*, int);
+int includes(int, int *, int);
 
 int main() {
   int arr[DIM], n, i, res;
@@ -31,8 +31,8 @@ int includes(int n, int *arr, int dim) {
   if (dim == 1)
     return *arr == n;
 
-  if (*(arr + dim/2) > n)
-    return includes(n, arr, dim/2);
+  if (*(arr + dim / 2) > n)
+    return includes(n, arr, dim / 2);
   else
-    return includes(n, arr + dim/2, dim - (dim/2));
+    return includes(n, arr + dim / 2, dim - (dim / 2));
 }

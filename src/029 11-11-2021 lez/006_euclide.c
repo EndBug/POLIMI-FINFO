@@ -31,8 +31,8 @@ int mcd(int m, int n) {
     return m;
 
   if (m > n)
-    return mcd(m-n, n);
+    return mcd(m - n, n);
 
   if (m < n)
-    return mcd(m, n-m);
+    return mcd(m, n - m);
 }

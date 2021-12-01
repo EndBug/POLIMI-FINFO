@@ -30,12 +30,11 @@ int max(int *arr, int dim) {
   if (dim == 1)
     return *arr;
   else {
-    m = max(arr+1, dim-1);
+    m = max(arr + 1, dim - 1);
 
     if (*arr > m)
       return *arr;
     else
       return m;
   }
-
 }

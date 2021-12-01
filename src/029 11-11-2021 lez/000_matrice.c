@@ -29,7 +29,7 @@
 */
 
 void stampa1(int[][NC], int, int);
-void stampa2(int*, int, int, int);
+void stampa2(int *, int, int, int);
 
 int main() {
   int m[NR][NC];
@@ -41,7 +41,7 @@ int main() {
       scanf("%d", &m[i][j]);
 
   stampa1(m, nr, nc);
-  stampa1(&m[0][0], NC, nr, nc);
+  stampa2(&m[0][0], NC, nr, nc);
 
   return 0;
 }
@@ -50,7 +50,7 @@ void stampa1(int m[][NC], int nr, int nc) {
   int i, j;
   for (i = 0; i < nr; i++) {
     for (j = 0; j < nc; j++) {
-      printf("%d ", m[i][j]);
+      printf("%2d ", m[i][j]);
     }
     printf("\n");
   }
@@ -60,7 +60,7 @@ void stampa2(int *p, int nc_dic, int nr_eff, int nc_eff) {
   int i, j;
   for (i = 0; i < nr_eff; i++) {
     for (j = 0; j < nc_eff; j++) {
-      printf("%d ", *(p + i+nc_dic + j));
+      printf("%2d ", *(p + (i * nc_dic) + j));
     }
     printf("\n");
   }

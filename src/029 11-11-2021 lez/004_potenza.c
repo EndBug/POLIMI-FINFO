@@ -27,6 +27,6 @@ int main() {
 int potenza(int a, int b) {
   if (b == 0)
     return 1;
-  
-  return a * potenza(a, b-1);
+
+  return a * potenza(a, b - 1);
 }

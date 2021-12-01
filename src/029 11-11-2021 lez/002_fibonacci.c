@@ -24,12 +24,12 @@ int main() {
 }
 
 /*
-  Questa soluzione ricalca precisamente la definizione, ed è quindi molto elegante,
-  però è molto costosa dal punto di vista computazionale.
+  Questa soluzione ricalca precisamente la definizione, ed è quindi molto
+  elegante, però è molto costosa dal punto di vista computazionale.
 */
 int fibonacci(int i) {
   if (i >= 2)
-    return fibonacci(i-1) + fibonacci(i-2);
+    return fibonacci(i - 1) + fibonacci(i - 2);
   else
     return i;
 }

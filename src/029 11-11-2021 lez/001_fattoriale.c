@@ -27,7 +27,7 @@ int main() {
 
 int fattoriale(int n) {
   if (n > 1) /* passo ricorsivo */
-    return n * fattoriale(n-1);
+    return n * fattoriale(n - 1);
   else /* n == 0 || n == 1, per definizione => caso base */
     return 1;
 }

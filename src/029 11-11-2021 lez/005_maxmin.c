@@ -2,11 +2,11 @@
 #define DIM 10
 
 /*
-  Non su consegne
+  Non su file consegne
   Come massimo ma trasmette al chiamante sia massimo che minimo dell'array.
 */
 
-void maxMin(int[], int, int*, int*);
+void maxMin(int[], int, int *, int *);
 
 int main() {
   int arr[DIM], i, max, min;
@@ -28,7 +28,7 @@ void maxMin(int a[], int dim, int *max, int *min) {
     *max = a[0];
     *min = a[0];
   } else {
-    maxMin(a+1, dim-1, &maxAltri, &minAltri);
+    maxMin(a + 1, dim - 1, &maxAltri, &minAltri);
     if (maxAltri > *a)
       *max = maxAltri;
     else
