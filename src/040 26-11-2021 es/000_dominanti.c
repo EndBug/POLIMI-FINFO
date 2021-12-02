@@ -5,23 +5,23 @@
 */
 
 /*
-  In esame non è necessario mettere gli #include, aggiungere il main, o dare un 
+  In esame non è necessario mettere gli #include, aggiungere il main, o dare un
   valore esplicito alle #define, a meno che non venga chiesto dal testo.
 */
 
 #define NR /* <int> */
 #define NC /* <int> */
 
-int analizza(int m[][NC] int nr, int nc);
+int analizza(int m[][NC], int nr, int nc);
 
-int analizza(int m[][NC] int nr, int nc) {
+int analizza(int m[][NC], int nr, int nc) {
   int i, j, h, k, ndom, domina;
 
-  for (i = 0, ndom = 0; i < nr-1; i++){
-    for (j = 0; j < nc-1; j++) {
+  for (i = 0, ndom = 0; i < nr - 1; i++) {
+    for (j = 0; j < nc - 1; j++) {
 
-      for (h = i+1, domina = 1; h < nr && domina; h++) {
-        for (k = j+1, k < nc && domina; k++) {
+      for (h = i + 1, domina = 1; h < nr && domina; h++) {
+        for (k = j + 1; k < nc && domina; k++) {
           if (m[i][j] <= m[h][k])
             domina = 0;
         }

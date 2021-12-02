@@ -4,9 +4,9 @@
   -> Quesito 4
 */
 
-/* 
+/*
   Possiamo definire altri sottoprogrammi, se li riteniamo utili.
-  Potremmo anche usare la funzione che esiste già in string.h, ma 
+  Potremmo anche usare la funzione che esiste già in string.h, ma
   l'implementazione è così facile che non conviene.
 */
 char toLow(char c);
@@ -39,7 +39,7 @@ char toLow(char c) {
 void minmaxstr(char str[], char *min, char *max) {
   int i;
 
-  /* 
+  /*
     Se non utilizzassimo una variabile in più rischieremmo di modificare la
     stringa, e non possiamo farlo => dobbiamo usare una variabile di appoggio.
   */

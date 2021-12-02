@@ -11,7 +11,7 @@ int analizza(int v[], int dim, int da, int a) {
   int i, j, ok, conto;
 
   for (i = da, ok = 1; i <= a && ok; i++) {
-    for (j = 0, conto = 0;  j < dim && conto <= 1; j++) {
+    for (j = 0, conto = 0; j < dim && conto <= 1; j++) {
       if (v[j] == i)
         conto++;
     }
