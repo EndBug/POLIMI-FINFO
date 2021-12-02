@@ -18,7 +18,7 @@
   allocazione della memoria.
 */
 
-void arraypari(int[], int, int**, int*);
+void arraypari(int[], int, int **, int *);
 
 int main() {
   int arr[DIM], *res, dimRes, i;
@@ -37,33 +37,32 @@ int main() {
   } else if (dimRes == 0)
     printf("Array vuoto.\n");
   else
-    printf("Errore.\n");  
+    printf("Errore.\n");
 
   return 0;
 }
 
-
 void arraypari(int a[], int dima, int **b, int *dimb) {
   int i, j;
   for (i = 0, *dimb = 0; i < dima; i++) {
-    if (a[i]%2 == 0) {
+    if (a[i] % 2 == 0) {
       (*dimb)++;
     }
   }
 
   if (*dimb != 0)
-    *b = malloc(sizeof(int)*(*dimb));
+    *b = malloc(sizeof(int) * (*dimb));
   else
     *b = NULL;
 
   if (*b) {
     for (i = 0, j = 0; i < dima; i++) {
-      if (a[i]%2 == 0) {
+      if (a[i] % 2 == 0) {
         *(*b + j) = a[i];
         j++;
       }
     }
   } else {
-    *dimb = -1;
+    *dimb = 0;
   }
 }

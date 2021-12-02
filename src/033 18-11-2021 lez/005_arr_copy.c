@@ -15,7 +15,7 @@
   opportunamente gli eventuali errori di allocazione della memoria.
 */
 
-int* arrayCopy(int[], int);
+int *arrayCopy(int[], int);
 
 int main() {
   int a1[DIM], *a2, i;
@@ -30,8 +30,8 @@ int main() {
       printf("%d ", a2[i]);
     printf("\n");
 
-    /* 
-      La free va messa qua, perché se facciamo free(NULL) il programma crasha 
+    /*
+      La free va messa qua, perché se facciamo free(NULL) il programma crasha
       (non possiamo liberare 0x0, che non ci è mai stato allocato)
     */
     free(a2);
@@ -40,14 +40,14 @@ int main() {
   return 0;
 }
 
-int* arrayCopy(int a[], int dim) {
+int *arrayCopy(int a[], int dim) {
   int i, *p;
 
-  p = (int*) malloc(sizeof(int)*dim);
+  p = (int *)malloc(sizeof(int) * dim);
 
   if (p) {
     for (i = 0; i < dim; i++)
-      *(p+i) = a[i];
+      *(p + i) = a[i];
   } else
     printf("Errore\n");
 

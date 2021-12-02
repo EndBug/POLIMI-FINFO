@@ -19,25 +19,25 @@ int main() {
   for (j = 0; j < N; j++) {
     scanf("%d", &dim);
 
-    /* 
-      malloc ic permette di allocare uo spazio nella memoria di una dimensione 
-      definita in runtime. 
-      malloc ritorna void* (puntatore a byte), quindi il compilatore fa un cast 
+    /*
+      malloc ic permette di allocare lo spazio nella memoria di una dimensione
+      definita in runtime.
+      malloc ritorna void* (puntatore a byte), quindi il compilatore fa un cast
       implicito (nel nostro caso a int*).
     */
-    p = (int*) malloc(dim*sizeof(int)); /* (void*) */
-  
+    p = (int *)malloc(dim * sizeof(int)); /* (void*) */
+
     if (p) {
       for (i = 0; i < dim; i++)
-        scanf("%d", p+i);
-  
-      for (i = dim-1; i >= 0; i--)
-        printf("%d ", *(p+i));
+        scanf("%d", p + i);
+
+      for (i = dim - 1; i >= 0; i--)
+        printf("%d ", *(p + i));
       printf("\n");
-  
-      /* 
-        Dopo aver utilizzato la memoria la dobbiamo liberare, altrimenti 
-        abbiamo una memory leak. 
+
+      /*
+        Dopo aver utilizzato la memoria la dobbiamo liberare, altrimenti
+        abbiamo una memory leak.
       */
       free(p);
     } else

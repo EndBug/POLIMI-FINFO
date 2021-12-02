@@ -13,7 +13,7 @@ int main() {
   if (fp) {
     fwrite(a, sizeof(int), DIM, fp);
     fclose(fp);
-  } else 
+  } else
     printf("Errore\n");
 
   return 0;

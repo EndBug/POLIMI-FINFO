@@ -23,9 +23,8 @@ int main() {
       printf("\n");
     } else
       printf("Errore lettura.\n");
-  } else 
+  } else
     printf("Errore apertura.\n");
 
   return 0;
 }
-

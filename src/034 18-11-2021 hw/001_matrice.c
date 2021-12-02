@@ -29,7 +29,7 @@
   -1 -2
 */
 
-int** buildMatrix(int n);
+int **buildMatrix(int n);
 void clearMatrix(int **m, int n);
 
 int main() {
@@ -41,18 +41,18 @@ int main() {
   if (m) {
     for (i = 0; i < n; i++) {
       for (j = 0; j < n; j++)
-        scanf("%d", *(m+i)+j);
+        scanf("%d", *(m + i) + j);
     }
 
     found = 0;
     for (r = n; r > 0 && !found; r--) {
-      for (i = 0; i <= n-r && !found; i++) {
-        for (j = 0; j <= n-r && !found; j++) {
+      for (i = 0; i <= n - r && !found; i++) {
+        for (j = 0; j <= n - r && !found; j++) {
           acc = 0;
 
           for (ii = 0; ii < r; ii++) {
             for (jj = 0; jj < r; jj++) {
-              acc += m[i+ii][j+jj];
+              acc += m[i + ii][j + jj];
             }
           }
 
@@ -63,17 +63,17 @@ int main() {
     }
 
     if (found) {
-      printf("Start: m[%d][%d], R: %d\n", i-1, j-1, r+1);
-      for (ii = 0; ii < r+1; ii++) {
-        for (jj = 0; jj < r+1; jj++)
-          printf("%2d ", m[i-1 + ii][j-1 + jj]);
+      printf("Start: m[%d][%d], R: %d\n", i - 1, j - 1, r + 1);
+      for (ii = 0; ii < r + 1; ii++) {
+        for (jj = 0; jj < r + 1; jj++)
+          printf("%2d ", m[i - 1 + ii][j - 1 + jj]);
         printf("\n");
       }
     } else
       printf("Non trovata.\n");
 
     for (i = 0; i < n; i++)
-      free(*(m+i));
+      free(*(m + i));
     free(m);
   } else
     printf("Errore di allocazione.\n");
@@ -81,22 +81,22 @@ int main() {
   return 0;
 }
 
-int** buildMatrix(int n) {
+int **buildMatrix(int n) {
   int **m, i, j, stop;
 
-  m = malloc(n * sizeof(int*));
+  m = malloc(n * sizeof(int *));
 
   if (m) {
     for (i = 0, stop = 0; i < n; i++) {
-      *(m+i) = malloc(n * sizeof(int));
+      *(m + i) = malloc(n * sizeof(int));
 
-      if (!(*(m+i)))
+      if (!(*(m + i)))
         stop = 1;
     }
 
     if (stop) {
       for (j = 0; j < i; j++)
-        free(*(m+i));
+        free(*(m + i));
       m = NULL;
     }
   }
@@ -108,5 +108,5 @@ void clearMatrix(int **m, int n) {
   int i;
 
   for (i = 0; i < n; i++)
-    free(*(m+i));
+    free(*(m + i));
 }

@@ -28,7 +28,7 @@ int main() {
 
   if (res) {
     for (i = 0; i < DIM; i++)
-      printf("%d ", *(res+i));
+      printf("%d ", *(res + i));
     printf("\n");
 
     free(res);
@@ -40,11 +40,11 @@ int main() {
 void arrayCopy(int a1[], int dim, int **a2) {
   int i;
 
-  *a2 = malloc(dim*sizeof(int));
+  *a2 = malloc(dim * sizeof(int));
 
   if (*a2) {
     for (i = 0; i < dim; i++)
-      *((*a2)+i) = a1[i];
+      *((*a2) + i) = a1[i];
   } else
     printf("Errore di allocazione.\n");
 }
