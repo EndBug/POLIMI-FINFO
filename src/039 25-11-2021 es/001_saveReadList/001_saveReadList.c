@@ -22,15 +22,15 @@ typedef struct node_ {
 } node_t;
 
 void display(node_t *h);
-node_t* push(node_t *h, int n);
-node_t* destroy(node_t *h);
+node_t *push(node_t *h, int n);
+node_t *destroy(node_t *h);
 
 void saveList(node_t *h, char fn[]);
-node_t* readList(char fn[]);
+node_t *readList(char fn[]);
 
 int main() {
   node_t *h, *res;
-  char fn[MAXS+1];
+  char fn[MAXS + 1];
   int n;
 
   h = NULL;
@@ -62,10 +62,11 @@ void display(node_t *h) {
     printf("%d ", h->num);
   printf("\n");
 }
-node_t* push(node_t *h, int n) {
+node_t *push(node_t *h, int n) {
   node_t *tmp, *last;
 
-  for (last = h; last && last->next; last = last->next);
+  for (last = h; last && last->next; last = last->next)
+    ;
 
   tmp = malloc(sizeof(node_t));
   if (tmp) {
@@ -80,7 +81,7 @@ node_t* push(node_t *h, int n) {
 
   return h;
 }
-node_t* destroy(node_t *h) {
+node_t *destroy(node_t *h) {
   node_t *tmp;
 
   while (h) {
@@ -106,7 +107,7 @@ void saveList(node_t *h, char fn[]) {
     printf("Errore apertura.\n");
 }
 
-node_t* readList(char fn[]) {
+node_t *readList(char fn[]) {
   FILE *fp;
   node_t *h;
   int tmp;

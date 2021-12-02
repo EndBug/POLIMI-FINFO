@@ -27,14 +27,14 @@ typedef struct nodo_compatto_ {
 } nodo_compatto_t;
 
 void display(node_t *h);
-node_t* push(node_t *h, int n);
-node_t* destroy(node_t *h);
+node_t *push(node_t *h, int n);
+node_t *destroy(node_t *h);
 
 void displayCom(nodo_compatto_t *h);
-nodo_compatto_t* pushCom(nodo_compatto_t *h, int n);
-nodo_compatto_t* destroyCom(nodo_compatto_t *h);
+nodo_compatto_t *pushCom(nodo_compatto_t *h, int n);
+nodo_compatto_t *destroyCom(nodo_compatto_t *h);
 
-nodo_compatto_t* compatto(node_t *l);
+nodo_compatto_t *compatto(node_t *l);
 
 int main() {
   node_t *li;
@@ -66,10 +66,11 @@ void display(node_t *h) {
     printf("%d ", h->num);
   printf("\n");
 }
-node_t* push(node_t *h, int n) {
+node_t *push(node_t *h, int n) {
   node_t *tmp, *last;
 
-  for (last = h; last && last->next; last = last->next);
+  for (last = h; last && last->next; last = last->next)
+    ;
 
   tmp = malloc(sizeof(node_t));
   if (tmp) {
@@ -84,7 +85,7 @@ node_t* push(node_t *h, int n) {
 
   return h;
 }
-node_t* destroy(node_t *h) {
+node_t *destroy(node_t *h) {
   node_t *tmp;
 
   while (h) {
@@ -101,10 +102,11 @@ void displayCom(nodo_compatto_t *h) {
     printf("(%d, %d) ", h->n, h->volte);
   printf("\n");
 }
-nodo_compatto_t* pushCom(nodo_compatto_t *h, int n) {
+nodo_compatto_t *pushCom(nodo_compatto_t *h, int n) {
   nodo_compatto_t *tmp, *last;
 
-  for (last = h; last && last->next; last = last->next);
+  for (last = h; last && last->next; last = last->next)
+    ;
 
   tmp = malloc(sizeof(nodo_compatto_t));
   if (tmp) {
@@ -120,7 +122,7 @@ nodo_compatto_t* pushCom(nodo_compatto_t *h, int n) {
 
   return h;
 }
-nodo_compatto_t* destroyCom(nodo_compatto_t *h) {
+nodo_compatto_t *destroyCom(nodo_compatto_t *h) {
   nodo_compatto_t *tmp;
 
   while (h) {
@@ -132,24 +134,20 @@ nodo_compatto_t* destroyCom(nodo_compatto_t *h) {
   return h; /* Always NULL */
 }
 
-nodo_compatto_t* compatto(node_t *l) {
+nodo_compatto_t *compatto(node_t *l) {
   nodo_compatto_t *h, *found;
 
   h = NULL;
 
   for (; l; l = l->next) {
-    for (
-      found = h; 
-      found && found->n != l->num; 
-      found = found->next
-    );
+    for (found = h; found && found->n != l->num; found = found->next)
+      ;
 
     if (found)
       (found->volte)++;
-    else 
+    else
       h = pushCom(h, l->num);
   }
 
   return h;
 }
-

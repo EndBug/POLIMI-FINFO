@@ -19,10 +19,10 @@ typedef struct node_ {
 } node_t;
 
 void display(node_t *h);
-node_t* push(node_t *h, int n);
-node_t* destroy(node_t *h);
+node_t *push(node_t *h, int n);
+node_t *destroy(node_t *h);
 
-node_t* unisci(node_t *l1, node_t *l2);
+node_t *unisci(node_t *l1, node_t *l2);
 
 int main() {
   node_t *l1, *l2, *lu;
@@ -61,10 +61,11 @@ void display(node_t *h) {
     printf("%d ", h->num);
   printf("\n");
 }
-node_t* push(node_t *h, int n) {
+node_t *push(node_t *h, int n) {
   node_t *tmp, *last;
 
-  for (last = h; last && last->next; last = last->next);
+  for (last = h; last && last->next; last = last->next)
+    ;
 
   tmp = malloc(sizeof(node_t));
   if (tmp) {
@@ -79,7 +80,7 @@ node_t* push(node_t *h, int n) {
 
   return h;
 }
-node_t* destroy(node_t *h) {
+node_t *destroy(node_t *h) {
   node_t *tmp;
 
   while (h) {
@@ -91,7 +92,7 @@ node_t* destroy(node_t *h) {
   return h; /* Always NULL */
 }
 
-node_t* unisci(node_t *l1, node_t *l2) {
+node_t *unisci(node_t *l1, node_t *l2) {
   node_t *res;
 
   res = NULL;

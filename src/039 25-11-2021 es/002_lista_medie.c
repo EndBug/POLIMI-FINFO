@@ -19,10 +19,10 @@ typedef struct node_ {
 } node_t;
 
 void display(node_t *h);
-node_t* push(node_t *h, int n);
-node_t* destroy(node_t *h);
+node_t *push(node_t *h, int n);
+node_t *destroy(node_t *h);
 
-node_t* listaMedie(node_t *l1);
+node_t *listaMedie(node_t *l1);
 
 int main() {
   node_t *l1, *l2;
@@ -52,10 +52,11 @@ void display(node_t *h) {
     printf("%d ", h->num);
   printf("\n");
 }
-node_t* push(node_t *h, int n) {
+node_t *push(node_t *h, int n) {
   node_t *tmp, *last;
 
-  for (last = h; last && last->next; last = last->next);
+  for (last = h; last && last->next; last = last->next)
+    ;
 
   tmp = malloc(sizeof(node_t));
   if (tmp) {
@@ -70,7 +71,7 @@ node_t* push(node_t *h, int n) {
 
   return h;
 }
-node_t* destroy(node_t *h) {
+node_t *destroy(node_t *h) {
   node_t *tmp;
 
   while (h) {
@@ -82,14 +83,14 @@ node_t* destroy(node_t *h) {
   return h; /* Always NULL */
 }
 
-node_t* listaMedie(node_t *l1) {
+node_t *listaMedie(node_t *l1) {
   node_t *l2, *prev, *curr;
 
   l2 = NULL;
 
   if (l1) {
     for (prev = l1, curr = l1->next; curr; prev = curr, curr = curr->next) {
-      l2 = push(l2, (prev->num + curr->num)/2);
+      l2 = push(l2, (prev->num + curr->num) / 2);
     }
     l2 = push(l2, prev->num);
   }
