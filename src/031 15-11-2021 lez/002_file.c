@@ -6,17 +6,20 @@
   sugli stream stdin e stdout
 */
 
-int main () {
+int main() {
   int n;
 
-  scanf("%d", &n);
-  printf("%d", n);
-  /* è equivalente a: */
-  fscanf(stdin,"%d", &n);
-  fprintf(stout,"%d", n);
-  /* stderr è il buffer per gli errori */
+  fscanf(stdin, "%d", &n);
+  fprintf(stdout, "%d\n", n);
 
-  /* Tastiera e schermo sono due file */
+  /*
+    E' equivalente a:
+      scanf("%d", &n);
+      printf("%d", n);
+    stdin e stdout rappresentano rispettivamente tastiera e schermo, e si
+    comportano come due puntatori a file in questo caso
+    Esiste anche stderr, il buffer per gli errori.
+  */
 
   /*
     REDIRIZIONAMENTO DELL'INPUT E OUTPUT
@@ -29,8 +32,6 @@ int main () {
     non abbiamo aperto o scritto dei file.
     Lo stdin e stdout vengono utilizzati
   */
-  scanf("%d", &n);
-  printf("%d", n);
 
   return 0;
 }

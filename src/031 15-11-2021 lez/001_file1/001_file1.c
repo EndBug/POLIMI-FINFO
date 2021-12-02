@@ -6,29 +6,30 @@
   nome, di al massimo 30 caratteri, è chiesto all'utente. In seguito,
   il programma chiede all'utente quanti valori interi vuole acquisire
   da tastiera, e poi procede con l'acquisizione da tastiera della
-  serie di numeri ed il loro salvataggio nel file
+  serie di numeri ed il loro salvataggio nel file.
 */
 
 /*
   Variante particolare
-  Anche qui lui ha messo tutto orribilmente nel main e ha diviso leggi e scrivi in due file
+  Anche qui lui ha messo tutto orribilmente nel main e ha diviso leggi e scrivi
+  in due file
 */
 
 void getNumELements(int *n);
 void getFileName(char path[]);
 void scrivi(char file[], int n);
 void leggi(char file[]);
-void leggi2(char file[], int n);
+void leggi2(char file[]);
 
-int main () {
-  int n; /* # di valori da acquisire */
-  char path[MAXPATH+1]; /* lui l'ha chiamato fn (sta per filename) */
+int main() {
+  int n;                  /* # di valori da acquisire */
+  char path[MAXPATH + 1]; /* lui l'ha chiamato fn (sta per filename) */
 
   getFileName(path);
   getNumELements(&n);
   scrivi(path, n);
   leggi(path);
-  leggi2(path, n);
+  leggi2(path);
 
   return 0;
 }
@@ -77,16 +78,16 @@ void leggi(char file[]) {
     printf("\n");
     fclose(fp);
     /*
-      Ogni volta che leggo/scrivo un char, leggo o e scrivo un byte. Se scrivo o 
-      leggo un intero quando leggo/scrivo avviene un'interpretazione, lo spazio 
+      Ogni volta che leggo/scrivo un char, leggo o e scrivo un byte. Se scrivo o
+      leggo un intero quando leggo/scrivo avviene un'interpretazione, lo spazio
       funge da separatore.
-      IMPORTANTE: abbiamo inserito uno spazio anche dopo l'ultimo caratttere che 
-      abbiamo scritto (vedere riga 40), se lo togliessimo l'ultimo carattere non 
+      IMPORTANTE: abbiamo inserito uno spazio anche dopo l'ultimo caratttere che
+      abbiamo scritto (vedere riga 40), se lo togliessimo l'ultimo carattere non
       verrebbe stampato l'ultimo spazio.
-      Durante la fscanf viene scartato ogni spazio e ci si ferma prima del prossimo 
-      spazio. Se non c'è lo spazio leggo lo spazio prima dell'ultimo numero inserito, 
-      il numero viene inserito in a, ma siccome viene settata la feof = 1 poichè 
-      non trovo uno spazio allora non viene stampato.
+      Durante la fscanf viene scartato ogni spazio e ci si ferma prima del
+      prossimo spazio. Se non c'è lo spazio leggo lo spazio prima dell'ultimo
+      numero inserito, il numero viene inserito in a, ma siccome viene settata
+      la feof = 1 poichè non trovo uno spazio allora non viene stampato.
     */
   } else {
     printf("Errore di apertura del file\n");
@@ -94,10 +95,10 @@ void leggi(char file[]) {
 }
 
 /*
-  Se non mi appoggio alla feof, per completezza, Miele utilizza la feof e si 
-  assume che il file sia ben formato.
+  Non utilizza feof, ma sfrutta il fatto che fscanf ritorna -1 quando viene
+  raggiunta la EOF.
 */
-void leggi2(char file[], int n) {
+void leggi2(char file[]) {
   FILE *fp;
   int i;
   int a, res;
@@ -108,7 +109,7 @@ void leggi2(char file[], int n) {
     res = fscanf(fp, "%d", &a);
     while (res > 0) {
       printf("%d ", a);
-      res = fscanf(fp, "%d", &a); /* restituisce -1 se viene quando siamo alla EOF. */
+      res = fscanf(fp, "%d", &a);
     }
     printf("\n");
     fclose(fp);
@@ -116,7 +117,3 @@ void leggi2(char file[], int n) {
     printf("Errore di apertura del file\n");
   }
 }
-
-
-
-
