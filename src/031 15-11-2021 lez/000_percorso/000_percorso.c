@@ -1,13 +1,12 @@
+#include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 /* Aggiungere -lm alla fine del comando gcc */
 
 #define MAXS 30
 #define MAXA 50
 
 /*
-  Da es. 15-11-2021
   Modificare il programma sul percorso in uno spazio bidimensionale
   proposto durante la lezione del 2021-10-29 (ed esteso durante il
   laboratorio del 2021-10-29) aggiungendo le seguenti funzionalità
@@ -41,7 +40,7 @@
 
 typedef struct {
   int x, y;
-  char nome[MAXS+1];
+  char nome[MAXS + 1];
 } localita_t;
 
 typedef struct {
@@ -55,37 +54,26 @@ int main() {
   int i_cmax[MAXA][2], n_cmax;
   int minX, minY, maxX, maxY;
   float lung, tmp_lung;
-  char ricerca[MAXS+1], nome[MAXS+1];
+  char ricerca[MAXS + 1], nome[MAXS + 1];
   FILE *fp;
 
   l.dim = 0;
 
   do {
-    printf(
-      "\nMENU\n- %d: inserisci\n- %d: aggiungi\n- %d: cancella\n- %d: visualizza\n- %d: lunghezza\n- %d: distanza massima\n- %d: cerca\n- %d: cornice\n- %d: salva su file\n- %d: carica da file\n- %d: salva su file binario\n- %d: carica da file binario\n- %d: uscita\nCosa vuoi fare? ",
-      INSERISCI,
-      AGGIUNGI,
-      CANCELLA,
-      VISUALIZZA,
-      LUNGHEZZA,
-      COPPIAMAX, 
-      CERCA, 
-      CORNICE, 
-      SALVA,
-      CARICA,
-      SALVABIN,
-      CARICABIN,
-      USCITA
-    );
+    printf("\nMENU\n- %d: inserisci\n- %d: aggiungi\n- %d: cancella\n- %d: "
+           "visualizza\n- %d: lunghezza\n- %d: distanza massima\n- %d: "
+           "cerca\n- %d: cornice\n- %d: salva su file\n- %d: carica da file\n- "
+           "%d: salva su file binario\n- %d: carica da file binario\n- %d: "
+           "uscita\nCosa vuoi fare? ",
+           INSERISCI, AGGIUNGI, CANCELLA, VISUALIZZA, LUNGHEZZA, COPPIAMAX,
+           CERCA, CORNICE, SALVA, CARICA, SALVABIN, CARICABIN, USCITA);
     scanf("%d", &scelta);
 
     if (scelta == INSERISCI) {
       if (l.dim < MAXA) {
         printf("Inserisci i dati: ");
 
-        scanf("%d %d %s", &l.loc[l.dim].x, 
-                          &l.loc[l.dim].y, 
-                          l.loc[l.dim].nome);
+        scanf("%d %d %s", &l.loc[l.dim].x, &l.loc[l.dim].y, l.loc[l.dim].nome);
         l.dim++;
       } else
         printf("Memoria terminata.\n");
@@ -95,13 +83,11 @@ int main() {
         scanf("%d", &i);
 
         if (i >= 0 && i < l.dim) {
-          for (j = l.dim-1; j >= i; j--)
-            l.loc[j+i] = l.loc[j];
+          for (j = l.dim - 1; j >= i; j--)
+            l.loc[j + i] = l.loc[j];
 
           printf("Inserisci i dati: ");
-          scanf("%d %d %s", &l.loc[i].x,
-                            &l.loc[i].y,
-                            l.loc[i].nome);
+          scanf("%d %d %s", &l.loc[i].x, &l.loc[i].y, l.loc[i].nome);
 
           l.dim++;
         } else
@@ -112,22 +98,21 @@ int main() {
       printf("Inserisci indice: ");
       scanf("%d", &i);
 
-      if (i>=0 && i<l.dim){
-        for(; i<l.dim-1; i++)
-          l.loc[i] = l.loc[i+1];
+      if (i >= 0 && i < l.dim) {
+        for (; i < l.dim - 1; i++)
+          l.loc[i] = l.loc[i + 1];
         l.dim--;
       } else
-        printf("Indice non valido.\n");      
+        printf("Indice non valido.\n");
     } else if (scelta == VISUALIZZA) {
       printf("Percorso:\n");
       for (i = 0; i < l.dim; i++)
-        printf("%d: %d %d %s\n", i, l.loc[i].x, 
-                                    l.loc[i].y,
-                                    l.loc[i].nome);
+        printf("%d: %d %d %s\n", i, l.loc[i].x, l.loc[i].y, l.loc[i].nome);
     } else if (scelta == LUNGHEZZA) {
-      for (i = 0, lung = 0; i < l.dim-1; i++) {
-        lung_quadrato = (l.loc[i].x - l.loc[i+1].x)*(l.loc[i].x - l.loc[i+1].x) 
-                        + (l.loc[i].y - l.loc[i+1].y)*(l.loc[i].y - l.loc[i+1].y);
+      for (i = 0, lung = 0; i < l.dim - 1; i++) {
+        lung_quadrato =
+            (l.loc[i].x - l.loc[i + 1].x) * (l.loc[i].x - l.loc[i + 1].x) +
+            (l.loc[i].y - l.loc[i + 1].y) * (l.loc[i].y - l.loc[i + 1].y);
         lung += sqrt(lung_quadrato);
       }
       printf("Lunghezza: %f\n", lung);
@@ -136,9 +121,9 @@ int main() {
       n_cmax = 0;
 
       for (i = 0; i < l.dim; i++) {
-        for (j = i+1; j < l.dim; j++) {
-          tmp_lung = (l.loc[i].x - l.loc[j].x)*(l.loc[i].x - l.loc[j].x) 
-                        + (l.loc[i].y - l.loc[j].y)*(l.loc[i].y - l.loc[j].y);
+        for (j = i + 1; j < l.dim; j++) {
+          tmp_lung = (l.loc[i].x - l.loc[j].x) * (l.loc[i].x - l.loc[j].x) +
+                     (l.loc[i].y - l.loc[j].y) * (l.loc[i].y - l.loc[j].y);
           tmp_lung = sqrt(tmp_lung);
 
           if (tmp_lung > lung) {
@@ -156,7 +141,8 @@ int main() {
 
       printf("Lunghezza massima: %f\nCoppie:\n", lung);
       for (i = 0; i < n_cmax; i++)
-        printf("- %s <-> %s\n", l.loc[i_cmax[i][0]].nome, l.loc[i_cmax[i][1]].nome);
+        printf("- %s <-> %s\n", l.loc[i_cmax[i][0]].nome,
+               l.loc[i_cmax[i][1]].nome);
     } else if (scelta == CERCA) {
       printf("Nome da cercare: ");
       scanf("%s", ricerca);
@@ -191,7 +177,7 @@ int main() {
 
         printf("Cornice: (%d, %d) -> (%d, %d)", minX, minY, maxX, maxY);
       } else
-      printf("Il percorso è vuoto.\n");
+        printf("Il percorso è vuoto.\n");
     } else if (scelta == SALVA) {
       printf("Nome del file: ");
       scanf("%s", nome);
@@ -248,7 +234,6 @@ int main() {
       printf("Scelta non valida!\n");
     }
   } while (scelta != USCITA);
-
 
   return 0;
 }
