@@ -10,7 +10,7 @@
 */
 
 int main() {
-  char fn[MAXS+1], c;
+  char fn[MAXS + 1], c;
   FILE *fp;
 
   scanf("%s", fn);

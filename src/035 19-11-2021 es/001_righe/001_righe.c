@@ -30,7 +30,7 @@
 */
 
 int main() {
-  char fn[MAXNAME+1];
+  char fn[MAXNAME + 1];
   FILE *fp;
   int i, riga, caratteri, parole;
   char c, prev;
@@ -66,7 +66,6 @@ int main() {
       }
     } else
       printf("File vuoto\n");
-
 
     fclose(fp);
   } else

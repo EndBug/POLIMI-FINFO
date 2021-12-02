@@ -22,7 +22,7 @@
 void spezza(char *str, char **ss1, char **ss2);
 
 int main() {
-  char str[MAXS+1], *s1, *s2;
+  char str[MAXS + 1], *s1, *s2;
 
   scanf("%[^\n]", str);
 
@@ -40,18 +40,19 @@ int main() {
 void spezza(char *str, char **ss1, char **ss2) {
   int len, i;
 
-  for (len = 0; *(str+len) != '\0'; len++);
+  for (len = 0; *(str + len) != '\0'; len++)
+    ;
 
-  *ss1 = malloc((len/2 + 1)*sizeof(char));
-  *ss2 = malloc(((len - len/2) + 1)*sizeof(char));
+  *ss1 = malloc((len / 2 + 1) * sizeof(char));
+  *ss2 = malloc(((len - len / 2) + 1) * sizeof(char));
 
   if (*ss1 && *ss2) {
-    for (i = 0; i < len/2; i++)
+    for (i = 0; i < len / 2; i++)
       *(*ss1 + i) = *(str + i);
     *(*ss1 + i) = '\0';
 
-    for (i = 0; i < len - len/2; i++)
-      *(*ss2 + i) = *(str + len/2 + i);
+    for (i = 0; i < len - len / 2; i++)
+      *(*ss2 + i) = *(str + len / 2 + i);
     *(*ss2 + i) = '\0';
   } else if (*ss1)
     free(*ss1);

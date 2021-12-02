@@ -10,14 +10,17 @@
 */
 
 int main() {
-  char fn1[MAXS+1], fn2[MAXS+1];
+  char fn1[MAXS + 1], fn2[MAXS + 1];
   FILE *fp1, *fp2;
   char c1, c2;
   int uguali;
 
   scanf("%s %s", fn1, fn2);
 
-  /* Utilizziamo la modalità binaria perché funziona anche per file non di testo. */
+  /*
+    Utilizziamo la modalità binaria perché funziona anche per file non di
+    testo.
+  */
   fp1 = fopen(fn1, "rb");
 
   if (fp1) {
@@ -25,8 +28,8 @@ int main() {
     fp2 = fopen(fn2, "rb");
 
     if (fp2) {
-      /* 
-        Dato che stiamo andando byte a byte, possiamo anche utilizzare questa 
+      /*
+        Dato che stiamo andando byte a byte, possiamo anche utilizzare questa
         fscanf al posto di fread.
       */
       fscanf(fp1, "%c", &c1);
