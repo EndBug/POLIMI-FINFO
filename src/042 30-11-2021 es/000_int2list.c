@@ -14,15 +14,16 @@ typedef struct nodo_ {
 } nodo_t;
 
 void visualizza(nodo_t *h) {
-  /* 
-    Dato che ogni modifica al parametro non influisce sul valore nel chiamante, 
-    possiamo direttamente utilizzare il parametro senza dichiarare una variabile tmp.
+  /*
+    Dato che ogni modifica al parametro non influisce sul valore nel chiamante,
+    possiamo direttamente utilizzare il parametro senza dichiarare una variabile
+    tmp.
   */
   for (; h; h = h->next)
     printf("%d ", h->num);
   printf("\n");
 }
-nodo_t* inserisciTesta(nodo_t *h, int n) {
+nodo_t *inserisciTesta(nodo_t *h, int n) {
   nodo_t *tmp;
   tmp = malloc(sizeof(nodo_t));
 
@@ -30,12 +31,12 @@ nodo_t* inserisciTesta(nodo_t *h, int n) {
     tmp->num = n;
     tmp->next = h;
     h = tmp;
-  } else 
+  } else
     printf("Errore allocazione.\n");
 
   return h;
 }
-nodo_t* inserisciCoda(nodo_t *h, int n) {
+nodo_t *inserisciCoda(nodo_t *h, int n) {
   nodo_t *tmp;
 
   if (h == NULL)
@@ -44,7 +45,7 @@ nodo_t* inserisciCoda(nodo_t *h, int n) {
   h->next = inserisciCoda(h->next, n);
   return h;
 }
-nodo_t* distruggi(nodo_t *h) {
+nodo_t *distruggi(nodo_t *h) {
   nodo_t *tmp;
 
   while (h) {
@@ -57,9 +58,9 @@ nodo_t* distruggi(nodo_t *h) {
   return h;
 }
 
-nodo_t* int2list(int n);
+nodo_t *int2list(int n);
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   int n;
   nodo_t *res;
 
@@ -72,7 +73,7 @@ int main(int argc, char* argv[]) {
     printf("Errore argomenti.\n");
 }
 
-nodo_t* int2list(int n) {
+nodo_t *int2list(int n) {
   nodo_t *h;
   int i, c, neg;
 
