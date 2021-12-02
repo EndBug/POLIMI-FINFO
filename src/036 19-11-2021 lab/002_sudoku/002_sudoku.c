@@ -92,11 +92,11 @@ void stampa_sudoku(int m[][N], int dim) {
   int i, j, k;
 
   for (i = 0; i < dim; i++) {
-    if (i%CELL == 0)
+    if (i % CELL == 0)
       stampa_sep_riga(dim);
 
     for (j = 0; j < dim; j++) {
-      if (j%CELL == 0)
+      if (j % CELL == 0)
         printf("| ");
       if (m[i][j] == VUOTO)
         printf("  ");
@@ -112,7 +112,7 @@ void stampa_sep_riga(int dim) {
   int i;
 
   for (i = 0; i < dim; i++) {
-    if (i%CELL == 0)
+    if (i % CELL == 0)
       printf("+-");
     printf("--");
   }
@@ -132,10 +132,12 @@ int leggi(char fn[], int m[][N], int dim) {
         m[i][j] = INVALID;
         fscanf(fp, "%d", &m[i][j]);
 
-        if ((feof(fp) && !(i == dim-1 && j == dim-1)) || m[i][j] == INVALID) {
+        if ((feof(fp) && !(i == dim - 1 && j == dim - 1)) ||
+            m[i][j] == INVALID) {
           printf("Errore: il file contiene meno elementi di quelli attesi.\n");
           ok = 0;
-        } else if (!((m[i][j] >= MINVAL && m[i][j] <= MAXVAL) || m[i][j] == VUOTO)) {
+        } else if (!((m[i][j] >= MINVAL && m[i][j] <= MAXVAL) ||
+                     m[i][j] == VUOTO)) {
           printf("Errore: il valore [%d][%d] non è valido.\n", i, j);
           ok = 0;
         }
@@ -171,7 +173,7 @@ int verifica_sudoku(int m[][N], int dim) {
   }
 
   for (i = 0; i < dim && valido; i++) {
-    for (n = MINVAL; n <=MAXVAL && valido; n++) {
+    for (n = MINVAL; n <= MAXVAL && valido; n++) {
       count = 0;
       for (j = 0; j < dim; j++) {
         if (m[j][i] == n)
@@ -190,12 +192,13 @@ int verifica_sudoku(int m[][N], int dim) {
         count = 0;
         for (ii = 0; ii < CELL; ii++) {
           for (jj = 0; jj < CELL; jj++) {
-            if (m[i+ii][j+jj] == n)
+            if (m[i + ii][j + jj] == n)
               count++;
           }
         }
         if (count > 1) {
-          printf("Cella [%d][%d]: il numero %d appare %d volte\n", i/CELL, j/CELL, n, count);
+          printf("Cella [%d][%d]: il numero %d appare %d volte\n", i / CELL,
+                 j / CELL, n, count);
           valido = 0;
         }
       }

@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 #define N 3
 
 /*
@@ -58,7 +58,7 @@ int main() {
 }
 
 float dist(point_t p1, point_t p2) {
-  return sqrt((p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y));
+  return sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
 }
 
 int regolare(point_t m[][N], int dim) {
@@ -66,17 +66,17 @@ int regolare(point_t m[][N], int dim) {
   int i, j, reg;
 
   l_diag = 0;
-  for (i = 0; i < dim-1; i++)
-    l_diag += dist(m[i][i], m[i+1][i+1]);
+  for (i = 0; i < dim - 1; i++)
+    l_diag += dist(m[i][i], m[i + 1][i + 1]);
 
   reg = 1;
   for (i = 0; i < dim && reg; i++) {
     l_tmp1 = 0;
     l_tmp2 = 0;
 
-    for (j = 0; j < dim-1; j++) {
-      l_tmp1 += dist(m[i][j], m[i][j+1]);
-      l_tmp2 += dist(m[j][i], m[j+1][i]);
+    for (j = 0; j < dim - 1; j++) {
+      l_tmp1 += dist(m[i][j], m[i][j + 1]);
+      l_tmp2 += dist(m[j][i], m[j + 1][i]);
     }
 
     if (l_diag <= l_tmp1 || l_diag <= l_tmp2)

@@ -33,7 +33,8 @@
   4 1 7
 */
 
-void translate(int m1[][N], int m2[][N], int nRows, int nCols, int tr_x, int tr_y);
+void translate(int m1[][N], int m2[][N], int nRows, int nCols, int tr_x,
+               int tr_y);
 
 int main() {
   int m1[N][N], m2[N][N];
@@ -58,12 +59,13 @@ int main() {
   return 0;
 }
 
-void translate(int m1[][N], int m2[][N], int nRows, int nCols, int tr_x, int tr_y) {
+void translate(int m1[][N], int m2[][N], int nRows, int nCols, int tr_x,
+               int tr_y) {
   int i, j;
 
   for (i = 0; i < nRows; i++) {
     for (j = 0; j < nCols; j++) {
-      m2[(i+tr_y) % nRows][(j+tr_x) % nCols] = m1[i][j];
+      m2[(i + tr_y) % nRows][(j + tr_x) % nCols] = m1[i][j];
     }
   }
 }
