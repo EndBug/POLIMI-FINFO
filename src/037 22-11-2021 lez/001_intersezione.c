@@ -38,6 +38,7 @@
   presente, e restituisce la testa della lista.
   * Scrivere un sottoprogramma che riceve una testa di una lista
   dinamica e cancella tutti gli elementi presenti.
+
   Supponendo di avere a disposizione una struttura dati per liste
   dinamiche e una serie di funzioni standard di manipolazione delle
   liste (come quelle definite sopra), scrivere un programma che
@@ -64,14 +65,14 @@ int lunghezza_ric(nodo_t *h);
 int lunghezza_it(nodo_t *h);
 int incluso_ric(nodo_t *h, int n);
 int incluso_it(nodo_t *h, int n);
-nodo_t* inserisciTesta(nodo_t *h, int n);
-nodo_t* inserisciCoda_ric(nodo_t *h, int n);
-nodo_t* inserisciCoda_it(nodo_t *h, int n);
-nodo_t* rimuovi_ric(nodo_t *h, int n);
-nodo_t* rimuovi_it(nodo_t *h, int n);
-nodo_t* distruggi_ric(nodo_t *h);
-nodo_t* distruggi_it(nodo_t *h);
-nodo_t* rimuoviTutti_it(nodo_t *h, int n);
+nodo_t *inserisciTesta(nodo_t *h, int n);
+nodo_t *inserisciCoda_ric(nodo_t *h, int n);
+nodo_t *inserisciCoda_it(nodo_t *h, int n);
+nodo_t *rimuovi_ric(nodo_t *h, int n);
+nodo_t *rimuovi_it(nodo_t *h, int n);
+nodo_t *distruggi_ric(nodo_t *h);
+nodo_t *distruggi_it(nodo_t *h);
+nodo_t *rimuoviTutti_it(nodo_t *h, int n);
 
 int main() {
   if (USERIC)
@@ -92,7 +93,8 @@ int main_it() {
     h1 = inserisciCoda_it(h1, n);
     scanf("%d", &n);
   }
-  scanf("%d", &n);  while (n) {
+  scanf("%d", &n);
+  while (n) {
     h2 = inserisciCoda_it(h2, n);
     scanf("%d", &n);
   }
@@ -123,7 +125,8 @@ int main_ric() {
     h1 = inserisciCoda_it(h1, n);
     scanf("%d", &n);
   }
-  scanf("%d", &n);  while (n) {
+  scanf("%d", &n);
+  while (n) {
     h2 = inserisciCoda_it(h2, n);
     scanf("%d", &n);
   }
@@ -150,9 +153,10 @@ void visualizza_ric(nodo_t *h) {
   }
 }
 void visualizza_it(nodo_t *h) {
-  /* 
-    Dato che ogni modifica al parametro non influisce sul valore nel chiamante, 
-    possiamo direttamente utilizzare il parametro senza dichiarare una variabile tmp.
+  /*
+    Dato che ogni modifica al parametro non influisce sul valore nel chiamante,
+    possiamo direttamente utilizzare il parametro senza dichiarare una variabile
+    tmp.
   */
   for (; h; h = h->next)
     printf("%d ", h->num);
@@ -162,7 +166,7 @@ void visualizza_it(nodo_t *h) {
 int lunghezza_ric(nodo_t *h) {
   if (h == NULL)
     return 0;
-  
+
   return 1 + lunghezza_ric(h->next);
 }
 int lunghezza_it(nodo_t *h) {
@@ -179,13 +183,15 @@ int incluso_ric(nodo_t *h, int n) {
   return incluso_ric(h->next, n);
 }
 int incluso_it(nodo_t *h, int n) {
-  for (; h && h->num != n; h = h->next);
+  for (; h && h->num != n; h = h->next)
+    ;
 
   return h != NULL;
 }
 
-/* Non esiste la versione ricorsiva perché non andiamo ad iterare sulla lista. */
-nodo_t* inserisciTesta(nodo_t *h, int n) {
+/* Non esiste la versione ricorsiva perché non andiamo ad iterare sulla lista.
+ */
+nodo_t *inserisciTesta(nodo_t *h, int n) {
   nodo_t *tmp;
   tmp = malloc(sizeof(nodo_t));
 
@@ -193,13 +199,13 @@ nodo_t* inserisciTesta(nodo_t *h, int n) {
     tmp->num = n;
     tmp->next = h;
     h = tmp;
-  } else 
+  } else
     printf("Errore allocazione.\n");
 
   return h;
 }
 
-nodo_t* inserisciCoda_ric(nodo_t *h, int n) {
+nodo_t *inserisciCoda_ric(nodo_t *h, int n) {
   nodo_t *tmp;
 
   if (h == NULL)
@@ -208,7 +214,7 @@ nodo_t* inserisciCoda_ric(nodo_t *h, int n) {
   h->next = inserisciCoda_ric(h->next, n);
   return h;
 }
-nodo_t* inserisciCoda_it(nodo_t *h, int n) {
+nodo_t *inserisciCoda_it(nodo_t *h, int n) {
   nodo_t *tmp, *prec;
 
   tmp = malloc(sizeof(nodo_t));
@@ -220,16 +226,17 @@ nodo_t* inserisciCoda_it(nodo_t *h, int n) {
       h = tmp;
     } else {
       /* Qua non posso usare h perché poi devo ritornarlo. */
-      for (prec = h; prec->next != NULL; prec = prec->next);
+      for (prec = h; prec->next != NULL; prec = prec->next)
+        ;
       prec->next = tmp;
     }
-  } else 
+  } else
     printf("Errore allocazione.\n");
 
   return h;
 }
 
-nodo_t* rimuovi_ric(nodo_t *h, int n) {
+nodo_t *rimuovi_ric(nodo_t *h, int n) {
   nodo_t *tmp;
 
   if (!h)
@@ -244,13 +251,13 @@ nodo_t* rimuovi_ric(nodo_t *h, int n) {
   h->next = rimuovi_ric(h->next, n);
   return h;
 }
-nodo_t* rimuovi_it(nodo_t *h, int n) {
+nodo_t *rimuovi_it(nodo_t *h, int n) {
   nodo_t *curr, *prec;
 
   curr = h;
   prec = NULL;
 
-  while(curr && curr->num != n) {
+  while (curr && curr->num != n) {
     prec = curr;
     curr = curr->next;
   }
@@ -266,7 +273,7 @@ nodo_t* rimuovi_it(nodo_t *h, int n) {
   return h;
 }
 
-nodo_t* distruggi_ric(nodo_t *h) {
+nodo_t *distruggi_ric(nodo_t *h) {
   if (!h)
     return NULL;
 
@@ -274,7 +281,7 @@ nodo_t* distruggi_ric(nodo_t *h) {
   free(h);
   return NULL;
 }
-nodo_t* distruggi_it(nodo_t *h) {
+nodo_t *distruggi_it(nodo_t *h) {
   nodo_t *tmp;
 
   while (h) {
@@ -287,7 +294,7 @@ nodo_t* distruggi_it(nodo_t *h) {
   return h;
 }
 
-nodo_t* rimuoviTutti_it(nodo_t *h, int n) {
+nodo_t *rimuoviTutti_it(nodo_t *h, int n) {
   nodo_t *curr, *prec, *canc;
 
   curr = h;

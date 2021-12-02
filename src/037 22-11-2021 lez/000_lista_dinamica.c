@@ -15,8 +15,9 @@
 */
 
 /*
-  Non possiamo utilizzare direttamente nodo_t perché è dichiarato successivamente,
-  quindi utilizziamo un secondo simbolo per definire la stessa struttura.
+  Non possiamo utilizzare direttamente nodo_t perché è dichiarato
+  successivamente, quindi utilizziamo un secondo simbolo per definire la stessa
+  struttura.
 */
 typedef struct nodo_ {
   int num;
@@ -36,7 +37,7 @@ int main() {
       tmp->num = n;
       tmp->next = h;
       h = tmp;
-    } else 
+    } else
       printf("Errore allocazione.\n");
     scanf("%d", &n);
   }
@@ -49,7 +50,7 @@ int main() {
     tmp = h;
     h = h->next;
     free(tmp);
-  } 
+  }
 
   return 0;
 }
