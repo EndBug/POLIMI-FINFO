@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 
   if (argc == 3) {
     /*
-      atoi converte la (prima parte della) stringa passata come 
+      atoi converte la (prima parte della) stringa passata come
       argomento a un intero
     */
     num1 = atoi(argv[1]);

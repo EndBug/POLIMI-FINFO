@@ -17,8 +17,8 @@ typedef struct nodo_ {
   struct nodo_ *next;
 } nodo_t;
 
-nodo_t* inserisciTesta(nodo_t *h, int n);
-nodo_t* distruggi(nodo_t *h);
+nodo_t *inserisciTesta(nodo_t *h, int n);
+nodo_t *distruggi(nodo_t *h);
 void visualizza(nodo_t *h);
 
 int main(int argc, char *argv[]) {
@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
       visualizza(h);
 
       h = distruggi(h);
-    } else 
+    } else
       printf("Errore apertura.\n");
   } else
     printf("Errore argomenti.\n");
@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-nodo_t* inserisciTesta(nodo_t *h, int n) {
+nodo_t *inserisciTesta(nodo_t *h, int n) {
   nodo_t *tmp;
   tmp = malloc(sizeof(nodo_t));
 
@@ -61,13 +61,13 @@ nodo_t* inserisciTesta(nodo_t *h, int n) {
     tmp->num = n;
     tmp->next = h;
     h = tmp;
-  } else 
+  } else
     printf("Errore allocazione.\n");
 
   return h;
 }
 
-nodo_t* distruggi(nodo_t *h) {
+nodo_t *distruggi(nodo_t *h) {
   nodo_t *tmp;
 
   while (h) {

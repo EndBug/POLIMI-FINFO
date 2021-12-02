@@ -6,9 +6,10 @@
   riga ciascun argomento ricevuto.
 */
 
-/* 
+/*
   Questo programma stampa tutti gli argomenti che vengono forniti.
-  !! Questi includono anche il nome del programma, dato che fa parte del comando.
+  !! Questi includono anche il nome del programma, dato che fa parte del
+  comando.
 */
 int main(int argc, char *argv[]) {
   int i;
