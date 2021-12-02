@@ -31,7 +31,7 @@ int analizzastringa(char[]);
 
 int main() {
   FILE *fpin, *fpout;
-  char str[MAXS+1];
+  char str[MAXS + 1];
 
   fpin = fopen(FNIN, "r");
   fpout = fopen(FNOUT, "w");
@@ -67,7 +67,5 @@ int analizzastringa(char str[]) {
       numbers++;
   }
 
-  return i > MINLENEX 
-    && numbers >= MINNUM 
-    && (i-numbers) >= MINOTH;
+  return i > MINLENEX && numbers >= MINNUM && (i - numbers) >= MINOTH;
 }

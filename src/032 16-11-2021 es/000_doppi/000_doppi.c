@@ -15,7 +15,7 @@
 */
 
 int main() {
-  char fn[MAXS+1];
+  char fn[MAXS + 1];
   int curr, prev;
   FILE *fp;
 
@@ -28,7 +28,7 @@ int main() {
     fscanf(fp, "%d", &prev);
     while (!feof(fp)) {
       fscanf(fp, "%d", &curr);
-      if (curr == 2*prev)
+      if (curr == 2 * prev)
         printf("%d %d\n", prev, curr);
       prev = curr;
     }

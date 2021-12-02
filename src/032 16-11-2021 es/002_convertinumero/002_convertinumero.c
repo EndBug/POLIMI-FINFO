@@ -29,7 +29,7 @@ void convertinumero(char *str, int *num, int *valido);
 
 int main() {
   FILE *fp;
-  char word[MAXS+1];
+  char word[MAXS + 1];
   int num, valido, sum;
 
   fp = fopen(FN, "r");
@@ -61,13 +61,13 @@ void convertinumero(char *str, int *num, int *valido) {
   int i;
 
   *valido = 1;
-  for (i = 0; *(str+i) != '\0' && *valido; i++)
-    *valido = *(str+i) >= '0' && *(str+i) <= '9';
+  for (i = 0; *(str + i) != '\0' && *valido; i++)
+    *valido = *(str + i) >= '0' && *(str + i) <= '9';
 
   if (*valido) {
     *num = 0;
-    for (i = 0; *(str+i) != '\0'; i++) {
-      *num = (*(str+i) - '0') + (*num * BASE);
+    for (i = 0; *(str + i) != '\0'; i++) {
+      *num = (*(str + i) - '0') + (*num * BASE);
     }
   }
 }
