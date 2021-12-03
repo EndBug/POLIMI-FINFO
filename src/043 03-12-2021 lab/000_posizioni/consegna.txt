@@ -1,0 +1,50 @@
+ES1.
+Si realizzino i seguenti sottoprogrammi utilizzando la struttura dati e funzioni
+fornite nei file lista.c e lista.h.
+
+Scrivere un sottoprogramma estrai() che riceve come parametro una lista dinamica di
+numeri interi detta l1, e un parametro intero detto dispari. Il sottoprogramma
+restituisce un puntatore ad una nuova lista l2 contenente gli elementi di l1 in
+posizione dispari se il parametro dispari vale 1, o gli elementi in posizione pari
+se il parametro dispari vale 0.
+NOTA: con "posizione" si intende l'equivalente dell'indice se stessimo parlando di
+vettori invece che di liste: il primo elemento della lista ha indice zero (pari),
+il secondo elemento ha indice 1 (dispari), e così via.
+
+Scrivere un sottoprogramma uguali() che verifica se due liste ricevute come
+parametro sono uguali, cioè contengono la stessa sequenza di numeri e restituisce 1
+in caso positivo 0 altrimenti.
+
+Scrivere un sottoprogramma stessoContenuto() che verifica se due liste l1 ed l2
+ricevute come parametro contengono gli stessi valori, a prescindere dall'ordine;
+cioè se una lista è una permutazione dell'altra. Il sottoprogramma restituisce 1 in
+caso positivo 0 altrimenti.
+Suggerimento: perché l1 sia permutazione di l2 basta controllare che le due liste
+abbiano pari lunghezza e che ciascun valore presente in l1 compaia sia in l1 che in
+l2 lo stesso numero di volte. Si suggerisce inoltre di implementare anche
+1) un sottoprogramma di ausilio conta() che riceve come parametri una lista ed un
+valore intero, e conta e restituisce quante volte il valore intero compare nella
+lista, ed
+2) un sottoprogramma lunghezza() che restituisce la lunghezza di una lista ricevuta
+come parametro.
+
+Scrivere un sottoprogramma unisci() che riceve come parametri due liste l1 ed l2.
+Il sottoprogramma crea e restituisce una nuova lista concatenando il contenuto di
+l1 con quello di l2.
+
+Scrivere un programma che carica dal file di testo "serie.txt" (il cui nome è stato
+passato come argomento alla chiamata del programma) una serie di lunghezza
+indefinita di numeri interi e li memorizza in una lista lf. Il programma, invocando
+i sottoprogrammi sopra definiti,
+1) crea una nuova lista lp, contenente i valori in posizione pari della lista lf.
+2) crea una nuova lista ld, contenente i valori in posizione dispari della lista
+lf.
+3) verifica se lp è uguale a ld ed in caso negativo se almeno contengono gli stessi
+numeri sebbene in ordine diverso. Il programma stampa a video gli esiti dei test.
+4) genera una nuova lista u in cui appaiono prima tutti gli elementi di lf
+originariamente in posizione pari e poi gli elementi originariamente in posizione
+dispari.
+5) infine, visualizza (a) la lista di partenza, (b) la lista degli elementi in
+posizione pari, (c) la lista degli elementi in posizione dispari, (d) la nuova
+lista con gli elementi riordinati come specificato.
+Infine il programma termina deallocando tutta la memoria allocata.
