@@ -1,0 +1,9 @@
+- Codice: 173
+  Nome: schienale
+  Quantità: 1
+- Codice: 912
+  Nome: seduta
+  Quantità: 1
+- Codice: 479
+  Nome: gamba
+  Quantità: 4

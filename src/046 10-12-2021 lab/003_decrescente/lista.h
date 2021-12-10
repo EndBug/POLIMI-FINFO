@@ -1,0 +1,1 @@
+../002_seleziona/lista.h
