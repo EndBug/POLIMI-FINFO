@@ -1,4 +1,4 @@
-# FIN - Fondamenti di Informatica
+# FINFO - Fondamenti di Informatica
 
 _[Notes in this repo are in Italian :it:]_
 
