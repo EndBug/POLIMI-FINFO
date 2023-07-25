@@ -12,7 +12,7 @@
   stesso numero in base 10. Nel caso la stringa contenga un carattere
   non valido, il programma visualizza il valore -1.
   Esempio 1: Se l'utente inserisce la stringa "24", il programma
-  visualizza il valore intero 20 (infatti 2 x 81 + 4 x 80 = 20).
+  visualizza il valore intero 20 (infatti 2 x 8^1 + 4 x 8^0 = 20).
   Esempio 2: Se l'utente inserisce la stringa "95", il programma
   visualizza il valore intero -1 (infatti '9' non è un carattere tra
   '0' e '7'). Stessa cosa se il programma legge la stringa "h5".
@@ -28,7 +28,7 @@ int main() {
 
   for (i = 0, potBase = 1, res = 0; i < len && res != ERRORE;
        i++, potBase *= BASE) {
-    if (str[i] >= '0' && str[i] < BASE + '0')
+    if (str[len - 1 - i] >= '0' && str[len - 1 - i] < BASE + '0')
       res += potBase * (str[len - 1 - i] - '0');
     else
       res = ERRORE;
