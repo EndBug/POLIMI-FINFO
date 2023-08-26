@@ -62,22 +62,29 @@ int kcon_rec(lista_t *l, int k) {
 }
 
 int knocon_it(lista_t *l, int k) {
-  int res;
+  int occ;
 
-  for (res = 0; l && l->next && l->next->next; l = l->next) {
-    if (l->n == k && l->next->next->n == k)
-      res = 1;
+  for (occ = 0; l && occ < 2; l = l->next) {
+    if (l->n == k)
+      occ++;
   }
 
-  return res;
+  return occ >= 2;
 }
 
+void knocon_rec_(lista_t *l, int k, int *occ) {
+  if (l) {
+    if (l->n == k)
+      (*occ)++;
+
+    if (*occ < 2)
+      knocon_rec_(l->next, k, occ);
+  }
+}
 int knocon_rec(lista_t *l, int k) {
-  if (!l || !l->next || !l->next->next)
-    return 0;
+  int occ;
 
-  if (l->n == k && l->next->next->n == k)
-    return 1;
+  knocon_rec_(l, k, &occ);
 
-  return knocon(l->next, k);
+  return occ >= 2;
 }
