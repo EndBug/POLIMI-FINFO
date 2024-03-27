@@ -1,6 +1,7 @@
 # FINFO - Fondamenti di Informatica
 
-_[Notes in this repo are in Italian :it:]_
+> [!NOTE]
+> This repo is in Italian
 
 Appunti e riassunti relativi al corso di Fondamenti di Informatica del prof. Antonio Rosario Miele [082746, AA 2021-2022], Politecnico di Milano.
 
